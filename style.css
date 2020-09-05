@@ -1,11 +1,11 @@
-body{
+body {
     display: flex;
     margin: 8;
     font-family: 'Roboto', sans-serif;
     color: white;
 }
 
-h1{
+h1 {
     font-weight: 700;
     font-size: 32px;
 }
@@ -14,7 +14,30 @@ h2 {
     cursor: pointer;
 }
 
-.sidebar{
+.button {
+    text-align: center;
+}
+
+.joinlogo {
+    
+        position: relative;
+        width: 80px;
+        object-fit: cover;
+        padding-left: 60px;
+        padding-top: 30px;
+        
+    
+}
+
+.btnAddTask {
+    padding-top: 60px;
+}
+
+.btnMatrix, .btnList {
+    padding-top: 70px;
+}
+
+.sidebar {
     width: 200px;
     height: -webkit-fill-available;
     background-color: #4587de;
@@ -23,7 +46,7 @@ h2 {
     padding: 8px;
 }
 
-.head{
+.head {
     width: -webkit-fill-available;
     height: 80px;
     background-color: #4587de;
@@ -34,14 +57,14 @@ h2 {
     justify-content: center;
 }
 
-.row2{
+.row2 {
     display: flex;
     height: 100%;
     width: calc(100% - 200px);
     flex-direction: column;
 }
 
-.mainWindow{
+.mainWindow {
     width: -webkit-fill-available;
     height: calc(100% - 80px);
     background-color: #4587de;
