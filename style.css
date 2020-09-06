@@ -19,14 +19,11 @@ h2 {
 }
 
 .joinlogo {
-    
-        position: relative;
-        width: 80px;
-        object-fit: cover;
-        padding-left: 60px;
-        padding-top: 30px;
-        
-    
+    position: relative;
+    width: 80px;
+    object-fit: cover;
+    padding-left: 60px;
+    padding-top: 30px;
 }
 
 .btnAddTask {
@@ -72,3 +69,51 @@ h2 {
     margin: 8px;
     padding: 8px;
 }
+
+.urgency {
+    display: flex;
+   
+}
+
+.importance {
+    position: absolute;
+}
+
+.h2-urgent, .h2-noturgent, .h2-important, .h2-notimportant {
+    position: absolute;
+}
+
+.h2-urgent{
+
+    padding-left: 80px;
+}
+
+.h2-noturgent{
+
+    right: 60px;
+}
+
+.h2-important {
+    top: 90px;
+    transform: rotate(-90deg);
+    
+}
+
+.h2-notimportant {
+    top: 280px;
+    transform: rotate(-90deg);
+    left: -12px;
+    
+}
+
+/*
+
+.important-urgency, .important-noturgency, .notimportant-urgency, .notimportant-noturgency{
+ 
+    background-color: black;
+    padding-top: 10px;
+    height: 100px;
+    width: 300px;
+}
+
+*/
