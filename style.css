@@ -10,12 +10,9 @@ h1 {
     font-size: 32px;
 }
 
-h2 {
-    cursor: pointer;
-}
-
 .button {
     text-align: center;
+    cursor: pointer;
 }
 
 .joinlogo {
@@ -72,7 +69,6 @@ h2 {
 
 .urgency {
     display: flex;
-   
 }
 
 .importance {
@@ -81,39 +77,52 @@ h2 {
 
 .h2-urgent, .h2-noturgent, .h2-important, .h2-notimportant {
     position: absolute;
+    font-style: italic;
 }
 
-.h2-urgent{
-
-    padding-left: 80px;
+.h2-urgent {
+    padding-left: 240px;
 }
 
-.h2-noturgent{
-
-    right: 60px;
+.h2-noturgent {
+    right: 180px;
 }
 
 .h2-important {
-    top: 90px;
+    top: 110px;
     transform: rotate(-90deg);
-    
 }
 
 .h2-notimportant {
     top: 280px;
     transform: rotate(-90deg);
     left: -12px;
-    
 }
 
-/*
-
-.important-urgency, .important-noturgency, .notimportant-urgency, .notimportant-noturgency{
- 
-    background-color: black;
-    padding-top: 10px;
-    height: 100px;
-    width: 300px;
+.important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+    position: absolute;
+    background-color: white;
+    height: 140px;
+    width: 350px;
+    border: 2px solid grey;
 }
 
-*/
+.important-urgent {
+    left: 370px;
+    top: 210px;
+}
+
+.notimportant-urgent {
+    top: 395px;
+    left: 370px;
+}
+
+.important-noturgent {
+    right: 70px;
+    top: 210px;
+}
+
+.notimportant-noturgent {
+    right: 70px;
+    top: 395px;
+}
