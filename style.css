@@ -126,3 +126,35 @@ h1 {
     right: 70px;
     top: 395px;
 }
+
+.listTitle {
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 30px;
+}
+
+.sortText {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+.sort-cont, .details {
+    font-family: 'Voces', cursive;
+    font-size: 20px;
+}
+
+.text-cont {}
+
+.details-text {}
+
+.listItem1 {
+    padding: 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    text-align: start;
+    font-family: 'Voces', cursive;
+    font-size: 18px;
+    color: black;
+}
