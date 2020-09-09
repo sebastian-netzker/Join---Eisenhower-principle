@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>eisenhower principle</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script>
+
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+
+        <img class="joinlogo" src="img/joinlogo.png" alt="">
+        <h2 class="button btnAddTask" id="btnAddTask">Add Task</h2>
+        <h2 class="button btnMatrix" id="btnMatrix">Matrix</h2>
+        <h2 class="button btnList" id="btnList">List</h2>
+    </div>
+    <div class="row2">
+        <div class="head" id="head">
+            <h1>Add Task</h1>
+        </div>
+        <!--for inserting the selected Title use h1-->
+        <div class="mainWindow" id="mainWindow">
+            <div class="taskColumn">
+                <div>
+                    <h3>Title</h3>
+                    <input id="title" class="input" type="text">
+                </div>
+                <div>
+                    <h3>Urgency</h3>
+                    <select id="urgency" class="input">
+                        <option>High Urgency</option>
+                        <option>Low Urgency</option>
+                    </select>
+                </div>
+                <div>
+                    <h3>Importance</h3>
+                    <select id="importance" class="input">
+                        <option>High Importance</option>
+                        <option>Low Importance</option>
+                    </select>
+                </div>
+            </div>
+            <div class="taskColumn">
+                <div>
+                    <h3>due Date</h3>
+                    <input id="date" class="input" type="date">
+                </div>
+                <div>
+                    <h3>Description</h3>
+                    <textarea id="description" rows="7" class="input"></textarea>
+                </div>
+                <div class="buttonPosition">
+                    <div id="cancle" class="buttonRed">
+                        cancle
+                    </div>
+                    <div id="AddTask" class="buttonGreen">
+                        add Task
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
