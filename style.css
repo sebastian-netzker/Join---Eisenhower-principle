@@ -1,23 +1,28 @@
 body {
     display: flex;
+    background-color: #e7e7e7;
     margin: 8;
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: grey;
+    font-weight: 200;
 }
 
 h1 {
-    font-weight: 700;
+    font-weight: 200;
     font-size: 32px;
+    color: grey;
 }
 
 .button {
     text-align: center;
     cursor: pointer;
+    font-weight: 200;
+    color: gray;
 }
 
 .joinlogo {
     position: relative;
-    width: 80px;
+    width: 60px;
     object-fit: cover;
     padding-left: 60px;
     padding-top: 30px;
@@ -32,19 +37,23 @@ h1 {
 }
 
 .sidebar {
-    width: 200px;
+    width: 160px;
     height: -webkit-fill-available;
-    background-color: #4587de;
-    border: 3px solid #376cb3;
+    background-color: white;
     margin: 8px;
     padding: 8px;
+    color: #e7e7e7;
+}
+
+.sidebar a{
+
+    text-decoration: none;
 }
 
 .head {
     width: -webkit-fill-available;
     height: 80px;
-    background-color: #4587de;
-    border: 3px solid #376cb3;
+    background-color: white;
     margin: 8px;
     padding: 8px;
     display: flex;
@@ -61,8 +70,7 @@ h1 {
 .mainWindow {
     width: -webkit-fill-available;
     height: calc(100% - 80px);
-    background-color: #4587de;
-    border: 3px solid #376cb3;
+    background-color: white;
     margin: 8px;
     padding: 8px;
     display: flex;
@@ -83,26 +91,30 @@ h1 {
 
 .h2-urgent {
     padding-left: 240px;
+    font-weight: 200;
 }
 
 .h2-noturgent {
     right: 180px;
+    font-weight: 200;
 }
 
 .h2-important {
     top: 110px;
     transform: rotate(-90deg);
+    font-weight: 200;
 }
 
 .h2-notimportant {
     top: 280px;
     transform: rotate(-90deg);
     left: -12px;
+    font-weight: 200;
 }
 
 .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
     position: absolute;
-    background-color: white;
+    background-color: #e5e5e5;
     height: 140px;
     width: 350px;
     border: 2px solid grey;
@@ -128,10 +140,6 @@ h1 {
     top: 395px;
 }
 
-.listTitle {
-    font-family: 'Signika Negative', sans-serif;
-    font-size: 30px;
-}
 
 .sortText {
     display: flex;
@@ -166,22 +174,23 @@ h1 {
     padding-right: 20px;
 }
 
-.input{
+.input {
     width: 250px;
 }
 
-h3{
+h3 {
     padding-top: 16px;
+    font-weight: 200;
 }
 
-.buttonPosition{
-position: fixed;
-bottom: 40px;
-right: 40px;
-display: flex;
+.buttonPosition {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
 }
 
-.buttonRed{
+.buttonRed {
     background-color: red;
     padding: 12px;
     margin: 12px;
@@ -193,7 +202,7 @@ display: flex;
     cursor: pointer;
 }
 
-.buttonGreen{
+.buttonGreen {
     background-color: green;
     padding: 12px;
     margin: 12px;
