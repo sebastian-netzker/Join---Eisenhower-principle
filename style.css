@@ -1,12 +1,12 @@
 body {
     display: flex;
-    margin: 8;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: #878787;
 }
 
 h1 {
-    font-weight: 700;
+    font-weight: 300;
     font-size: 32px;
 }
 
@@ -34,9 +34,8 @@ h1 {
 .sidebar {
     width: 200px;
     height: -webkit-fill-available;
-    background-color: #4587de;
-    border: 3px solid #376cb3;
-    margin: 8px;
+    background-color: white;
+    margin: 0;
     padding: 8px;
 }
 

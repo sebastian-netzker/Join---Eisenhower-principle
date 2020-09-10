@@ -1,0 +1,23 @@
+[
+    {
+        "title" : "Flug buchen",
+        "date" : "2020-12-12",
+        "urgency" : "low",
+        "importance" : "high",
+        "note" : "Frankfurt nach London"
+    },
+    {
+        "title" : "Meeting mit Max",
+        "date" : "2020-09-10",
+        "urgency" : "high",
+        "importance" : "low",
+        "note" : "Restaurant Eder"
+    },
+    {
+        "title" : "Zeitung lesen",
+        "date" : "2020-09-10",
+        "urgency" : "high",
+        "importance" : "low",
+        "note" : "Wirtschaftsteil"
+    }
+]
