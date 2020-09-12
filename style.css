@@ -95,7 +95,7 @@ h1 {
 
 .h2-urgent, .h2-noturgent, .h2-important, .h2-notimportant {
     position: absolute;
-    font-style: italic;
+    
 }
 
 .h2-urgent {
