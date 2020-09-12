@@ -20,9 +20,15 @@
     <div class="sidebar" id="sidebar">
 
         <img class="joinlogo" src="img/joinlogo.png" alt="">
-        <a href="addTask.html"><h2 class="button btnAddTask" id="btnAddTask">Add Task</h2></a>
-        <a href="matrix.html"><h2 class="button btnMatrix" id="btnMatrix">Matrix</h2></a>
-        <a href="list.html"><h2 class="button btnList" id="btnList">List</h2></a>
+        <a href="addTask.html">
+            <h2 class="button btnAddTask" id="btnAddTask">Add Task</h2>
+        </a>
+        <a href="matrix.html">
+            <h2 class="button btnMatrix" id="btnMatrix">Matrix</h2>
+        </a>
+        <a href="list.html">
+            <h2 class="button btnList" id="btnList">List</h2>
+        </a>
     </div>
     <div class="row2">
         <div class="head" id="head">
@@ -30,19 +36,21 @@
         </div>
         <!--for inserting the selected Title use h1-->
         <div class="mainWindow" id="mainWindow">
-            <div class="sortText">
-
-                <p class="sort-cont">Level</p>
-                <p class="details">Details</p>
-            </div>
-            <div class="taskListCont">
-
-                <div class="listItem1">
-                    <div class="level"></div>
-                    <div>
-                    </div>
+            <div class="cont_1">
+                <div class="sortText">
+                    <p class="name-cont">Name</p>
+                    <p class="sort-cont">Priority Status</p>
+                    <p class="details">Details</p>
                 </div>
+                <div class="taskListCont">
 
+                    <div class="listItem1">
+                        <div class="name" id="name"></div>
+                        <div class="PriorityStatus" id="PriorityStatus"></div>
+                        <div class="details" id="details"></div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
