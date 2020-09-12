@@ -3,7 +3,12 @@
 <head>
     <title>eisenhower principle</title>
     <meta charset="utf-8">
+
+     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="style.css">
+   
+
     <script>
 
     </script>
@@ -21,45 +26,52 @@
     </div>
     <div class="row2">
         <div class="head" id="head">
-            <h1>Add Task</h1>
+            <h1 class="h1-AddTask">Add Task</h1>
         </div>
         <!--for inserting the selected Title use h1-->
         <div class="mainWindow" id="mainWindow">
             <div class="taskColumn">
-                <div>
-                    <h3>Title</h3>
-                    <input id="title" class="input" type="text">
+                <div class="form-group">
+                <label for="exampleFormControlInput1"><h3>Title</h3></label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
                 </div>
-                <div>
-                    <h3>Urgency</h3>
-                    <select id="urgency" class="input">
-                        <option>High Urgency</option>
-                        <option>Low Urgency</option>
-                    </select>
+              
+                <div class="form-group">
+                <label for="exampleFormControlSelect1"><h3>Urgency</h3></label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option>High Urgency</option>
+                <option>Low Urgency</option>
+                </select>
                 </div>
-                <div>
-                    <h3>Importance</h3>
-                    <select id="importance" class="input">
-                        <option>High Importance</option>
-                        <option>Low Importance</option>
-                    </select>
+
+                <div class="form-group">
+                <label for="exampleFormControlSelect1"><h3>Importance</h3></label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option>High Importance</option>
+                <option>Low Importance</option>
+                </select>
                 </div>
+
             </div>
             <div class="taskColumn">
-                <div>
-                    <h3>due Date</h3>
-                    <input id="date" class="input" type="date">
+               
+
+                 <div class="form-group">
+                 <label for="exampleFormControlInput1"><h3>Date</h3></label>
+                 <input id="date" type="date" class="form-control" id="exampleFormControlInput1" >
+               </div>
+
+                 <div class="form-group">
+                 <label for="exampleFormControlTextarea1"> <h3>Description</h3></label>
+                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
                 </div>
-                <div>
-                    <h3>Description</h3>
-                    <textarea id="description" rows="7" class="input"></textarea>
-                </div>
+                
                 <div class="buttonPosition">
-                    <div id="cancle" class="buttonRed">
-                        cancle
+                    <div id="cancle" class="btn btn1 btn-danger">
+                        Cancle
                     </div>
-                    <div id="AddTask" class="buttonGreen">
-                        add Task
+                    <div id="AddTask" class="btn btn2 btn-success">
+                        Add Task
                     </div>
                 </div>
             </div>

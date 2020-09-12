@@ -26,6 +26,11 @@ h1 {
     object-fit: cover;
     padding-left: 60px;
     padding-top: 30px;
+    box-sizing: unset;
+}
+
+.h1-AddTask {
+    padding-top: 20px;
 }
 
 .btnAddTask {
@@ -40,13 +45,14 @@ h1 {
     width: 160px;
     height: -webkit-fill-available;
     background-color: white;
-    margin: 8px;
+    margin: -8px;
+    margin-right: 8px;
     padding: 8px;
     color: #e7e7e7;
+    box-sizing: unset;
 }
 
-.sidebar a{
-
+.sidebar a {
     text-decoration: none;
 }
 
@@ -55,9 +61,11 @@ h1 {
     height: 80px;
     background-color: white;
     margin: 8px;
+    margin-right: -16px;
     padding: 8px;
     display: flex;
     justify-content: center;
+    box-sizing: unset;
 }
 
 .row2 {
@@ -72,6 +80,7 @@ h1 {
     height: calc(100% - 80px);
     background-color: white;
     margin: 8px;
+    margin-right: -16px;
     padding: 8px;
     display: flex;
 }
@@ -90,13 +99,15 @@ h1 {
 }
 
 .h2-urgent {
-    padding-left: 240px;
+    padding-left: 300px;
     font-weight: 200;
+    padding-top: 10px;
 }
 
 .h2-noturgent {
     right: 180px;
     font-weight: 200;
+    padding-top: 10px;
 }
 
 .h2-important {
@@ -112,9 +123,15 @@ h1 {
     font-weight: 200;
 }
 
+h2 {
+    font-size: 1.5rem;
+    margin-top: unset;
+    line-height: unset;
+}
+
 .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
     position: absolute;
-    background-color: #e5e5e5;
+    background-color: white;
     height: 140px;
     width: 350px;
     border: 2px solid grey;
@@ -139,7 +156,6 @@ h1 {
     right: 70px;
     top: 395px;
 }
-
 
 .sortText {
     display: flex;
@@ -181,35 +197,32 @@ h1 {
 h3 {
     padding-top: 16px;
     font-weight: 200;
+    font-size: 20px;
+    color: black;
 }
 
 .buttonPosition {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
+    position: relative;
+    bottom: 5px;
+    left: 0px;
     display: flex;
 }
 
-.buttonRed {
-    background-color: red;
-    padding: 12px;
-    margin: 12px;
-    border-radius: 12px;
-    width: 120px;
-    display: flex;
-    justify-content: center;
-    font-weight: 600;
-    cursor: pointer;
+.btn1 {
+    width: 100px;
 }
 
-.buttonGreen {
-    background-color: green;
-    padding: 12px;
-    margin: 12px;
-    border-radius: 12px;
-    width: 120px;
-    display: flex;
-    justify-content: center;
-    font-weight: 600;
-    cursor: pointer;
+.btn1:hover {
+    background-color: rgb(245, 98, 98);
 }
+
+.btn2 {
+    position: absolute;
+    right: 0px;
+    width: 100px;
+}
+
+.btn2:hover {
+    background-color: rgb(86, 209, 86);
+}
+
