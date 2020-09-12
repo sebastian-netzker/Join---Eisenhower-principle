@@ -163,23 +163,13 @@ h2 {
     padding: 0px 30px;
 }
 
-.sort-cont, .details {
-    font-family: 'Voces', cursive;
-    font-size: 20px;
-}
-
-.text-cont {}
-
-.details-text {}
-
 .listItem1 {
-    padding: 0px 15px;
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
     text-align: start;
-    font-family: 'Voces', cursive;
     font-size: 18px;
     color: black;
 }
@@ -226,3 +216,14 @@ h3 {
     background-color: rgb(86, 209, 86);
 }
 
+.cont_1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.PriorityStatus {
+    border-radius: 10px;
+    border: none;
+    color: grey;
+}
