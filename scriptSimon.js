@@ -22,7 +22,7 @@ function addTask(){
         'urgency': urgency,
         'importance': importance,
         'date': date,
-        'discription': discription,
+        'description': discription,
         'created': new Date().getTime() //unix timestamp at the time of creating the task 
     }
    

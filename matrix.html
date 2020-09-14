@@ -4,14 +4,19 @@
     <title>Eisenhower - Matrix</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <script>
+
+    <script src="scriptSebastian.js"></script>
+    
+
+    <script src="scriptSimon.js"></script>
+      
         
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body onload="loadTasks(), insertTasktoMatrix()">
     <div class="sidebar" id="sidebar">
 
         <img class="joinlogo" src="img/joinlogo.png" alt="">
@@ -32,10 +37,26 @@
             <h2 class="h2-important">important</h2>
             <h2 class="h2-notimportant">not important</h2></div>
 
-            <div class="important-urgent"></div>
-            <div class="important-noturgent"></div>
-            <div class="notimportant-urgent"></div>
-            <div class="notimportant-noturgent"></div>
+            <div class="important-urgent">
+                <ul id="list-important-urgent">
+
+                </ul>
+            </div>
+            <div class="important-noturgent">
+                <ul id="list-important-noturgent">
+
+                </ul>
+            </div>
+            <div class="notimportant-urgent">
+                <ul id="list-notimportant-urgent">
+
+                </ul>
+            </div>
+            <div class="notimportant-noturgent">
+                <ul id="list-notimportant-noturgent">
+
+                </ul>
+            </div>
 
 
         </div>
