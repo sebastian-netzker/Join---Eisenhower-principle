@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body onload="loadTasks()">
+<body onload="loadTasks(), getToday()">
     <div class="sidebar" id="sidebar">
 
         <img class="joinlogo" src="img/joinlogo.png" alt="">
@@ -56,7 +56,7 @@
 
                  <div class="form-group">
                  <label for="exampleFormControlInput1"><h3>Date</h3></label>
-                 <input id="date" type="date" class="form-control" id="exampleFormControlInput1" >
+                 <input id="date" type="date" min="" class="form-control" id="exampleFormControlInput1" >
                </div>
 
                  <div class="form-group">
