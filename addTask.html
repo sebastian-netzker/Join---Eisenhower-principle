@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="style.css">
    
 
-    <script>
-
-    </script>
+    <script src="scriptSimon.js"></script>
+    <script src="tasks.json"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -33,12 +32,12 @@
             <div class="taskColumn">
                 <div class="form-group">
                 <label for="exampleFormControlInput1"><h3>Title</h3></label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+                <input type="text" class="form-control" id="title" placeholder="Title">
                 </div>
               
                 <div class="form-group">
                 <label for="exampleFormControlSelect1"><h3>Urgency</h3></label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="urgency">
                 <option>High Urgency</option>
                 <option>Low Urgency</option>
                 </select>
@@ -46,7 +45,7 @@
 
                 <div class="form-group">
                 <label for="exampleFormControlSelect1"><h3>Importance</h3></label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="importance">
                 <option>High Importance</option>
                 <option>Low Importance</option>
                 </select>
@@ -63,14 +62,14 @@
 
                  <div class="form-group">
                  <label for="exampleFormControlTextarea1"> <h3>Description</h3></label>
-                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+                 <textarea class="form-control" id="description" rows="7"></textarea>
                 </div>
                 
                 <div class="buttonPosition">
-                    <div id="cancle" class="btn btn1 btn-danger">
+                    <div id="cancle" class="btn btn1 btn-danger" onclick="emptyFields()">
                         Cancle
                     </div>
-                    <div id="AddTask" class="btn btn2 btn-success">
+                    <div id="AddTask" class="btn btn2 btn-success" onclick="addTask()">
                         Add Task
                     </div>
                 </div>
