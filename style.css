@@ -95,7 +95,6 @@ h1 {
 
 .h2-urgent, .h2-noturgent, .h2-important, .h2-notimportant {
     position: absolute;
-    
 }
 
 .h2-urgent {
@@ -228,7 +227,7 @@ h3 {
     color: grey;
 }
 
-.popup{
+.popup {
     display: flex;
     position: fixed;
     left: calc(178px + 20%);
@@ -243,9 +242,180 @@ h3 {
     color: #4f4f4f;
 }
 
-li{
-
+li {
     list-style: none;
     left: 10px;
     padding-bottom: 5px;
+}
+
+/*responsive*/
+
+@media(max-width:450px) {
+    .sidebar {
+        width: 30%;
+        height: initial;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    .mainWindow {
+        display: flex;
+        flex-direction: column;
+    }
+    .row2 {
+        width: 100%;
+        height: initial;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .taskColumn {
+        width: 100%;
+    }
+    .joinlogo {
+        width: 35px;
+        padding-left: 44px;
+    }
+    .head {
+        height: 60px;
+        margin-right: 0;
+        padding: 0;
+        margin: 4px;
+    }
+    .mainWindow {
+        margin: 4px;
+        margin-right: 4px;
+        padding: 0px;
+    }
+    h3 {
+        font-size: 15px;
+    }
+    .h2-noturgent {
+        right: 185px;
+        padding-top: 8px;
+    }
+    .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+        height: 100px;
+        width: 100px;
+    }
+    .important-noturgent {
+        right: 135px;
+    }
+    .important-urgent {
+        left: 250px;
+        top: 210px;
+    }
+    .notimportant-noturgent {
+        right: 135px;
+    }
+    .notimportant-urgent {
+        left: 250px;
+    }
+    .h2-notimportant {
+        left: -25px;
+        top: 340px;
+    }
+    .h2-important {
+        left: -20px;
+        top: 160px;
+    }
+    .h2-urgent {
+        padding-left: 160px;
+        padding-top: 80px;
+    }
+    .h2-noturgent {
+        right: 155px;
+        padding-top: 80px;
+    }
+    .sortText {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+    }
+    .btn1 {
+        width: 85px;
+    }
+    .btn2 {
+        width: 85px;
+    }
+    .btn {
+        font-size: 0.8rem;
+    }
+}
+
+@media(min-device-width: 451px) and (max-device-width: 600px) {
+    .sidebar {
+        width: 25%;
+    }
+    .joinlogo {
+        width: 40px;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .h1-AddTask {
+        padding-top: 0px;
+    }
+    .row2 {
+        width: 66%;
+    }
+    .mainWindow {
+        flex-direction: column;
+        padding: 0px;
+    }
+    .head {
+        height: 30px;
+        padding: 8px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    .taskColumn {
+        width: 100%;
+    }
+    .form-group {
+        margin-bottom: 0px;
+    }
+    label {
+        margin-bottom: 0px;
+    }
+    .form-control {
+        font-size: 0.85rem;
+    }
+    .btn {
+        padding: .275rem .75rem;
+        font-size: 0.8rem;
+    }
+    .btn1 {
+        width: 80px;
+    }
+    .btn2 {
+        width: 80px;
+    }
+    .important-noturgent {
+        right: 175px;
+        top: 135px;
+    }
+    .important-urgent {
+        left: 395px;
+        top: 135;
+    }
+    .notimportant-noturgent {
+        right: 175px;
+        top: 320px;
+    }
+    .notimportant-urgent {
+        top: 320px;
+        left: 395px;
+    }
+    .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+        height: 130px;
+        width: 130px;
+    }
+    .buttonPosition {
+        top: 10px
+    }
 }
