@@ -8,6 +8,11 @@ function emptyFields(){
     document.getElementById("description"). value = null;
 }
 
+function deleteMatrix(){
+
+    localStorage.clear();
+}
+
 
 
 function addTask(){

@@ -242,3 +242,10 @@ h3 {
     text-align: center;
     color: #4f4f4f;
 }
+
+li{
+
+    list-style: none;
+    left: 10px;
+    padding-bottom: 5px;
+}
