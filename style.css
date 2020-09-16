@@ -131,6 +131,7 @@ h2 {
 .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
     position: absolute;
     background-color: white;
+    background-color: #eaeaea !important;
     height: 140px;
     width: 350px;
     border: 2px solid grey;
@@ -243,9 +244,15 @@ h3 {
 }
 
 li {
+    position: absolute;
     list-style: none;
     left: 10px;
-    padding-bottom: 5px;
+    right: 10px;
+    padding: 8px;
+    background-color: #efefef;
+    background-color: white !important;
+    border-radius: 5px 5px 5px 5px;
+    border-left: orange 8px solid;
 }
 
 /*responsive*/

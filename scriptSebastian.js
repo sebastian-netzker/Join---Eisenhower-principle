@@ -12,7 +12,7 @@ function insertTasktoMatrix() {
       let li1 = document.createElement("li");
       li1.innerHTML =
         "Title: " +
-        allTasks[i].title +
+        allTasks[i].title  +
         " , " +
         " Description: " +
         allTasks[i].description +
