@@ -1,7 +1,6 @@
 body {
     display: flex;
     background-color: #e7e7e7;
-    margin: 8;
     font-family: 'Roboto', sans-serif;
     color: grey;
     font-weight: 200;
@@ -18,6 +17,10 @@ h1 {
     cursor: pointer;
     font-weight: 200;
     color: gray;
+}
+
+.button:hover {
+    color: black;
 }
 
 .joinlogo {
@@ -45,7 +48,6 @@ h1 {
     width: 160px;
     height: -webkit-fill-available;
     background-color: white;
-    margin: -8px;
     margin-right: 8px;
     padding: 8px;
     color: #e7e7e7;
@@ -60,7 +62,6 @@ h1 {
     width: -webkit-fill-available;
     height: 80px;
     background-color: white;
-    margin: 8px;
     margin-right: -16px;
     padding: 8px;
     display: flex;
@@ -79,7 +80,7 @@ h1 {
     width: -webkit-fill-available;
     height: calc(100% - 80px);
     background-color: white;
-    margin: 8px;
+    margin-top: 8px;
     margin-right: -16px;
     padding: 8px;
     display: flex;
@@ -258,16 +259,35 @@ li {
 /*responsive*/
 
 @media(max-width:450px) {
-    .sidebar {
-        width: 30%;
-        height: initial;
+    body{
+        margin: 0;
     }
+    
+    .sidebar {
+        position: fixed !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-around !important;
+        width: 100% !important;
+        height: 65px !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+    }
+
+    .btnAddTask, .btnMatrix, .btnList{
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
     h2 {
         font-size: 1rem;
     }
     .mainWindow {
         display: flex;
         flex-direction: column;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: -webkit-fill-available;
     }
     .row2 {
         width: 100%;
@@ -281,7 +301,7 @@ li {
     }
     .joinlogo {
         width: 35px;
-        padding-left: 44px;
+        padding: 0 !important;
     }
     .head {
         height: 60px;
@@ -336,7 +356,7 @@ li {
     }
     .sortText {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         padding: 0px;
     }
     .btn1 {
@@ -352,7 +372,12 @@ li {
 
 @media(min-device-width: 451px) and (max-device-width: 600px) {
     .sidebar {
-        width: 25%;
+        position: absolute !important;
+        display: flex !important;
+        align-items: flex-end !important;
+        justify-content: space-around !important;
+        width: 100% !important;
+        height: 65px !important;
     }
     .joinlogo {
         width: 40px;
