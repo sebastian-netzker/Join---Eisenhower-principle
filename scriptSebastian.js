@@ -1,73 +1,90 @@
+let generatedHTMLCode ; 
+
+
+
+
 function insertTasktoMatrix() {
   let list1 = document.getElementById("list-important-urgent");
   let list2 = document.getElementById("list-important-noturgent");
   let list3 = document.getElementById("list-notimportant-urgent");
   let list4 = document.getElementById("list-notimportant-noturgent");
 
+  
+
+
   for (let i = 0; i < allTasks.length; i++) {
+
+
+      generatedHTMLCode = generateListItem(
+        allTasks[i].date,
+        allTasks[i].title,
+        allTasks[i].description
+      );
+
     if (
       allTasks[i].importance == "High Importance" &&
       allTasks[i].urgency == "High Urgency"
     ) {
-      let li1 = document.createElement("li");
-      li1.innerHTML =
-        "Title: " +
-        allTasks[i].title  +
-        " , " +
-        " Description: " +
-        allTasks[i].description +
-        " , " +
-        " Date: " +
-        allTasks[i].date;
-      list1.appendChild(li1);
+
+       
+      list1.insertAdjacentHTML('beforeend', generatedHTMLCode);
+      
+
+      
     } else if (
       allTasks[i].importance == "High Importance" &&
       allTasks[i].urgency == "Low Urgency"
     ) {
-      let li2 = document.createElement("li");
-      li2.innerHTML =
-        "Title: " +
-        allTasks[i].title +
-        " , " +
-        " Description: " +
-        allTasks[i].description +
-        " , " +
-        " Date: " +
-        allTasks[i].date;
-      list2.appendChild(li2);
+
+       
+
+
+  
+      list2.insertAdjacentHTML('beforeend', generatedHTMLCode);
     } else if (
       allTasks[i].importance == "Low Importance" &&
       allTasks[i].urgency == "High Urgency"
     ) {
-      let li3 = document.createElement("li");
-
-      li3.innerHTML =
-        "Title: " +
-        allTasks[i].title +
-        " , " +
-        " Description: " +
-        allTasks[i].description +
-        " , " +
-        " Date: " +
-        allTasks[i].date;
-      list3.appendChild(li3);
+      
+      list3.insertAdjacentHTML('beforeend', generatedHTMLCode);
     } else if (
       allTasks[i].importance == "Low Importance" &&
       allTasks[i].urgency == "Low Urgency"
     ) {
-      let li4 = document.createElement("li");
 
-      li4.innerHTML =
-        "Title: " +
-        allTasks[i].title +
-        " , " +
-        " Description: " +
-        allTasks[i].description +
-        " , " +
-        " Date: " +
-        allTasks[i].date;
 
-      list4.appendChild(li4);
+      list4.insertAdjacentHTML('beforeend', generatedHTMLCode);
     }
   }
 }
+
+function generateListItem(date,title,description) {
+
+  
+
+  let html = 
+    `<li  >
+      <img onclick="deleteTask()" class="garbage_can" src="img/garbage_can.png">
+      <span class="date">${date}</span> <br> 
+      <span class="title">${title}</span> <br> 
+      <span class="description">${description}
+    </li>`;
+    
+
+    return html;
+     
+
+}
+
+function deleteTask(){
+
+
+  
+  localStorage.clear();
+  location.reload();
+
+ 
+
+}
+
+

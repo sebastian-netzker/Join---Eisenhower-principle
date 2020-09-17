@@ -32,7 +32,7 @@ h1 {
     box-sizing: unset;
 }
 
-.h1-AddTask {
+.h1-AddTask, .h1-Matrix {
     padding-top: 20px;
 }
 
@@ -111,13 +111,13 @@ h1 {
 }
 
 .h2-important {
-    top: 110px;
+    top: 150px;
     transform: rotate(-90deg);
     font-weight: 200;
 }
 
 .h2-notimportant {
-    top: 280px;
+    top: 320px;
     transform: rotate(-90deg);
     left: -12px;
     font-weight: 200;
@@ -135,7 +135,9 @@ h2 {
     background-color: #eaeaea !important;
     height: 140px;
     width: 350px;
-    border: 2px solid grey;
+    border: 1px solid grey;
+    border-radius: 8px;
+    overflow-y: auto;
 }
 
 .important-urgent {
@@ -244,25 +246,54 @@ h3 {
     color: #4f4f4f;
 }
 
+ul {
+    line-height: 110%;
+}
+
 li {
-    position: absolute;
+    position: relative;
     list-style: none;
-    left: 10px;
+    left: -20px;
+    margin-top: 5px;
     right: 10px;
     padding: 8px;
     background-color: #efefef;
     background-color: white !important;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 8px 8px 8px 8px;
     border-left: orange 8px solid;
+}
+
+.garbage_can {
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    right: 10px;
+    object-fit: cover;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+.date {
+    font-size: 10px;
+}
+
+.title {
+    color: black;
+    font-size: 18px;
+}
+
+.description {
+    font-size: 12px;
 }
 
 /*responsive*/
 
 @media(max-width:450px) {
-    body{
+    body {
         margin: 0;
     }
-    
     .sidebar {
         position: fixed !important;
         display: flex !important;
@@ -273,12 +304,10 @@ li {
         margin-right: 0 !important;
         padding: 0 !important;
     }
-
-    .btnAddTask, .btnMatrix, .btnList{
+    .btnAddTask, .btnMatrix, .btnList {
         padding: 0 !important;
         margin: 0 !important;
     }
-
     h2 {
         font-size: 1rem;
     }
