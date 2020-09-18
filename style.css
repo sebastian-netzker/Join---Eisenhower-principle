@@ -260,7 +260,23 @@ li {
     background-color: #efefef;
     background-color: white !important;
     border-radius: 8px 8px 8px 8px;
-    border-left: orange 8px solid;
+    
+}
+
+.li-1 {
+    border-left: rgb(255, 72, 0) 8px solid;
+}
+
+.li-2 {
+    border-left: rgb(255, 196, 0) 8px solid;
+}
+
+.li-3 {
+    border-left: rgb(91, 212, 43) 8px solid;
+}
+
+.li-4 {
+    border-left: rgb(0, 132, 255) 8px solid;
 }
 
 .garbage_can {
@@ -272,8 +288,6 @@ li {
     position: absolute;
     cursor: pointer;
 }
-
-
 
 .date {
     font-size: 10px;
