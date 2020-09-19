@@ -1,3 +1,4 @@
+
 let generatedHTMLCode;
 
 let html;
@@ -13,6 +14,14 @@ let list3;
 let list4;
 
 let list;
+
+let k = 1;
+
+let n = 0;
+
+/**
+ * This function decided wehere the field is added
+ */
 
 function insertTasktoMatrix() {
   list1 = document.getElementById("list-important-urgent");
@@ -45,6 +54,10 @@ function insertTasktoMatrix() {
   }
 }
 
+/**
+ * This function create fields for the matrix 
+ */
+
 function createFieldinList1() {
   m = 1;
   generateHTMLCode();
@@ -69,16 +82,33 @@ function createFieldinList4() {
   list4.insertAdjacentHTML("beforeend", generatedHTMLCode);
 }
 
+
+/**
+ * This function creates automatically  a list item 
+ * {date} - Date of the task
+ * {title} - Title of the task
+ * {description} - Description of the task
+ * {return} - Generated HTML Code as string
+ * {k,m}  - Parameter to automatic creation of different classes and id´s  
+ */
+
 function generateListItem(m, date, title, description) {
-  html = `<li class="li-${m}">
-      <img onclick="deleteTask()" class="garbage_can" src="img/garbage_can.png">
+  html = `<li id="li-${k}" class="li-${m}">
+      <img onclick="deleteTask(${n})" class="garbage_can" src="img/garbage_can.png">
       <span class="date">${date}</span> <br> 
       <span class="title">${title}</span> <br> 
       <span class="description">${description}
     </li>`;
 
+    k++;
+    n++;
+
   return html;
 }
+
+/**
+ *   In this function the parameter from generateListItem are defined 
+ */
 
 function generateHTMLCode() {
   generatedHTMLCode = generateListItem(
@@ -89,7 +119,19 @@ function generateHTMLCode() {
   );
 }
 
-function deleteTask() {
-  localStorage.clear();
+/**
+ * This function delete a list item 
+ */
+
+function deleteTask(n) {
+
+  allTasks.splice(n,1);
+
+  allTasks = JSON.stringify(allTasks);
+
+  localStorage.setItem('data',allTasks);
+
   location.reload();
+
+
 }
