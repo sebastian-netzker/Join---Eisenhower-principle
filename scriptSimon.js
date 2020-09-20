@@ -37,11 +37,11 @@ function gererateTaskObject(){
 function addTask(){
     let t = gererateTaskObject();
     allTasks.push(t);
-
+    
     tasksString = JSON.stringify(allTasks);
     localStorage.setItem('data', tasksString);
     emptyFields();
-    let html = "<div id='popup' class='transparentgray'><div class='popup'><h5>A new Task with the Title " + title +" has been added!</h5>You have set " + importance + " and " + urgency + "!</div></div>";
+    let html = "<div id='popup' class='transparentgray'><div class='popup'><h5>A new Task with the Title " + t.title +" has been added!</h5>You have set " + t.importance + " and " + t.urgency + "!</div></div>";
     document.getElementById("mainWindow").insertAdjacentHTML('beforeEnd', html);
     setTimeout(function (){
         document.getElementById('popup').remove();
