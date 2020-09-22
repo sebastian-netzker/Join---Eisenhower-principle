@@ -6,9 +6,8 @@
 
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="scriptDoriana.js">
-
-    </script>
+    <script src="scriptSimon.js"></script>
+    <script src="scriptDoriana.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Voces&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap"
@@ -18,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body onload="loadTasks(),insertItemsOnTheList()">
     <div class="sidebar" id="sidebar">
 
         <img class="joinlogo" src="img/joinlogo.png" alt="">
@@ -46,11 +45,9 @@
                 </div>
                 <div class="taskListCont">
 
-                    <div class="listItem1">
-                        <div class="name" id="name"></div>
-                        <div class="PriorityStatus" id="PriorityStatus"></div>
-                        <div class="details" id="details"></div>
-                    </div>
+                    <ul class="listItem1" id="listItem1">
+
+                    </ul>
 
                 </div>
             </div>

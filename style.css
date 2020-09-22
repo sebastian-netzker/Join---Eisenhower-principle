@@ -167,14 +167,38 @@ h2 {
 }
 
 .listItem1 {
-    padding: 10px 15px;
+    padding: 4px 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    text-align: start;
+    font-size: 15px;
+    list-style-type: none;
+}
+
+.item {
     display: flex;
     justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 4px 15px;
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
     text-align: start;
-    font-size: 18px;
-    color: black;
+    font-size: 15px;
+    color: gray;
+    border-left: 8px solid orange;
+}
+
+li .taskListCont {
+    overflow-y: scroll;
+}
+
+.delete {
+    border-radius: 2vh;
+    border: 1px solid orange;
+    background-color: orange;
+    color: white;
 }
 
 .taskColumn {
@@ -251,7 +275,7 @@ ul {
     line-height: 110%;
 }
 
-li {
+ul.matrix li {
     position: relative;
     list-style: none;
     left: -20px;
@@ -261,7 +285,6 @@ li {
     background-color: #efefef;
     background-color: white !important;
     border-radius: 8px 8px 8px 8px;
-    
 }
 
 .li-1 {
@@ -303,8 +326,8 @@ li {
     font-size: 12px;
 }
 
-.transparentgray{
-    background-color:rgba(0,0,0,0.7);
+.transparentgray {
+    background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
     height: 100vh;
     position: fixed;
