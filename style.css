@@ -275,7 +275,7 @@ ul {
     line-height: 110%;
 }
 
-ul.matrix li {
+ .li-1, .li-2, .li-3, .li-4 {
     position: relative;
     list-style: none;
     left: -20px;
