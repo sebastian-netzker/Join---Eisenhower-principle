@@ -2,7 +2,6 @@ let priorityStatus = "high";
 let status = 0;
 let listArray = [];
 function createItemsToTheList(title, priorityStatus, discription, i) {
-    // console.log('create:' + i);
     let item = `
         <li class="item" id="item${i}">
        
@@ -14,9 +13,6 @@ function createItemsToTheList(title, priorityStatus, discription, i) {
          `;
 
     return item;
-
-
-
 }
 
 function insertItemsOnTheList() {
@@ -33,7 +29,6 @@ function insertItemsOnTheList() {
         }
         let insertItem = createItemsToTheList(allTasks[i].title, priorityStatus, allTasks[i].description, i);
         document.getElementById('listItem1').insertAdjacentHTML('beforeend', insertItem);
-
     }
 }
 
@@ -41,14 +36,5 @@ function deleteItemList(id) {
     let item = document.getElementById('item' + id);
     item.parentNode.removeChild(item);
     allTasks.splice(id, 1);
-
     localStorage.setItem('data', JSON.stringify(allTasks));
-
-
 }
-
-
-
-
-
-
