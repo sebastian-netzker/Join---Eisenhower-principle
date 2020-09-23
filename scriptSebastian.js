@@ -1,21 +1,5 @@
 
-let generatedHTMLCode;
-
-let html;
-
 let i;
-
-let list1;
-
-let list2;
-
-let list3;
-
-let list4;
-
-let list;
-
-let k = 1;
 
 /**
  * This function decided wehere the field is added
@@ -32,7 +16,7 @@ function insertTasktoMatrix() {
   list4.innerHTML = '';
 
   console.log('allTasks', allTasks);
-  for (let i = 0; i < allTasks.length; i++) {
+  for (i = 0; i < allTasks.length; i++) {
     if (
       allTasks[i].importance == "High Importance" &&
       allTasks[i].urgency == "High Urgency"
@@ -63,6 +47,7 @@ function insertTasktoMatrix() {
 
 function createFieldinList1(id) {
   m = 1;
+   
   let html =  generateListItem(
     m,
     allTasks[i].date,
@@ -75,57 +60,66 @@ function createFieldinList1(id) {
 
 function createFieldinList2(id) {
   m = 2;
-  generateHTMLCode(id);
-  list2.insertAdjacentHTML("beforeend", generatedHTMLCode);
-}
-
-function createFieldinList3(id) {
-  m = 3;
-  generateHTMLCode(id);
-  list3.insertAdjacentHTML("beforeend", generatedHTMLCode);
-}
-
-function createFieldinList4(id) {
-  m = 4;
-  generateHTMLCode(id);
-  list4.insertAdjacentHTML("beforeend", generatedHTMLCode);
-}
-
-
-/**
- * This function creates automatically  a list item 
- * {date} - Date of the task
- * {title} - Title of the task
- * {description} - Description of the task
- * {return} - Generated HTML Code as string
- * {k,m}  - Parameter to automatic creation of different classes and id´s  
- */
-
-function generateListItem(m, date, title, description, id) {
-  html = `<li id="li-${k}" class="li-${m}">
-      <img onclick="deleteTask(${id})" class="garbage_can" src="img/garbage_can.png">
-      <span class="date">${date}</span> <br> 
-      <span class="title">${title}</span> <br> 
-      <span class="description">${description}
-    </li>`;
-
-  k++;
-  return html;
-}
-
-/**
- *   In this function the parameter from generateListItem are defined 
- */
-
-function generateHTMLCode(id) {
-  generatedHTMLCode = generateListItem(
+  
+  let html =  generateListItem(
     m,
     allTasks[i].date,
     allTasks[i].title,
     allTasks[i].description,
     id
   );
+  list2.insertAdjacentHTML("beforeend", html);
 }
+
+function createFieldinList3(id) {
+  m = 3;
+  
+  let html =  generateListItem(
+    m,
+    allTasks[i].date,
+    allTasks[i].title,
+    allTasks[i].description,
+    id
+  );
+  list3.insertAdjacentHTML("beforeend", html);
+}
+
+function createFieldinList4(id) {
+  m = 4;
+  
+  let html =  generateListItem(
+    m,
+    allTasks[i].date,
+    allTasks[i].title,
+    allTasks[i].description,
+    id
+  );
+  list4.insertAdjacentHTML("beforeend", html);
+}
+
+
+/**
+ * This function create automatically a list item 
+ * @param {number} m  - Parameter to create different classes
+ * @param {number} k  - Parameter to create different id´s
+ * @param {date} date - Date of the task
+ * @param {string} title - Title of the task
+ * @param {string} description - Description of the task
+ * @param {number} id - Parameter to change number in delete Task Function
+ */
+function generateListItem(m, date, title, description, id) {
+ let k = 1;
+ let html = `<li id="li-${k}" class="li-${m}">
+      <img onclick="deleteTask(${id})" class="garbage_can" src="img/garbage_can.png">
+      <span class="date">${date}</span> <br> 
+      <span class="title">${title}</span> <br> 
+      <span class="description">${description}</span>
+    </li>`;
+
+  k++;
+  return html;
+}
+
 
 /**
  * This function delete a list item 
@@ -137,6 +131,5 @@ function deleteTask(n) {
   let allTasksAsString = JSON.stringify(allTasks);
   localStorage.setItem('data', allTasksAsString);
 
-  // location.reload();
   insertTasktoMatrix();
 }
