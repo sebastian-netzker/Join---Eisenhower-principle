@@ -1,19 +1,19 @@
-let allTasks =[];
+let allTasks = [];
 /**
  * This function will empty all entries in the add Task form. The previous added Information will not be changed
  */
-function emptyFields(){
+function emptyFields() {
     document.getElementById("title").value = null;
     document.getElementById("urgency").value = "High Urgency";
     document.getElementById("importance").value = "High Importance";
     document.getElementById("date").value = null;
-    document.getElementById("description"). value = null;
+    document.getElementById("description").value = null;
 }
 
 /**
  * creates the JSON 'task' which is used in the function addTask() for saving the data in the local storage
  */
-function gererateTaskObject(){
+function gererateTaskObject() {
     let title = document.getElementById("title").value;
     let urgency = document.getElementById("urgency").value;
     let importance = document.getElementById("importance").value;
@@ -30,49 +30,51 @@ function gererateTaskObject(){
     };
     return task;
 }
-   
+
 /**
  * This function will add the entries in the add Task form to the JSON allTasks
  */
-function addTask(){
+function addTask() {
     let t = gererateTaskObject();
     allTasks.push(t);
-    
+
     tasksString = JSON.stringify(allTasks);
     localStorage.setItem('data', tasksString);
     emptyFields();
-    let html = "<div id='popup' class='transparentgray'><div class='popup'><h5>A new Task with the Title " + t.title +" has been added!</h5>You have set " + t.importance + " and " + t.urgency + "!</div></div>";
+    let html = "<div id='popup' class='transparentgray'><div class='popup'><h5>A new Task with the Title " + t.title + " has been added!</h5>You have set " + t.importance + " and " + t.urgency + "!</div></div>";
     document.getElementById("mainWindow").insertAdjacentHTML('beforeEnd', html);
-    setTimeout(function (){
+    setTimeout(function () {
         document.getElementById('popup').remove();
-    } ,4000);
+    }, 4000);
 }
 
 /**
  * loads the JSON allTasks from local storage, if ther is no 'data' it will be created
  */
-function loadTasks(){
-    if (localStorage.getItem('data') == null){ //if ther is no existing 'data' file in localStorage it will be created
+function loadTasks() {
+    if (localStorage.getItem('data') == null) { //if ther is no existing 'data' file in localStorage it will be created
         localStorage.setItem('data', JSON.stringify([]));
     } else {
-    let tasksString = localStorage.getItem('data');
-    allTasks = JSON.parse(tasksString);
+        let tasksString = localStorage.getItem('data');
+        allTasks = JSON.parse(tasksString);
     }
 }
 
-//lets date be minimum the date of today
-function getToday(){
+/**
+ * lets date be minimum the date of today
+*/
+function getToday() {
     let today = new Date();
     let dd = today.getDate();
-    let mm = today.getMonth()+1;
+    let mm = today.getMonth() + 1;
     let yyyy = today.getFullYear();
-    if(dd<10){
-        dd='0'+dd
-    } 
-    if(mm<10){
-        mm='0'+mm
-    } 
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
 
-today = yyyy+'-'+mm+'-'+dd;
-document.getElementById("date").setAttribute("min", today);
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("date").setAttribute("min", today);
 }

@@ -17,8 +17,6 @@ let list;
 
 let k = 1;
 
-let n = 0;
-
 /**
  * This function decided wehere the field is added
  */
@@ -28,28 +26,33 @@ function insertTasktoMatrix() {
   list2 = document.getElementById("list-important-noturgent");
   list3 = document.getElementById("list-notimportant-urgent");
   list4 = document.getElementById("list-notimportant-noturgent");
+  list1.innerHTML = '';
+  list2.innerHTML = '';
+  list3.innerHTML = '';
+  list4.innerHTML = '';
 
-  for (i = 0; i < allTasks.length; i++) {
+  console.log('allTasks', allTasks);
+  for (let i = 0; i < allTasks.length; i++) {
     if (
       allTasks[i].importance == "High Importance" &&
       allTasks[i].urgency == "High Urgency"
     ) {
-      createFieldinList1(1);
+      createFieldinList1(i);
     } else if (
       allTasks[i].importance == "High Importance" &&
       allTasks[i].urgency == "Low Urgency"
     ) {
-      createFieldinList2();
+      createFieldinList2(i);
     } else if (
       allTasks[i].importance == "Low Importance" &&
       allTasks[i].urgency == "High Urgency"
     ) {
-      createFieldinList3();
+      createFieldinList3(i);
     } else if (
       allTasks[i].importance == "Low Importance" &&
       allTasks[i].urgency == "Low Urgency"
     ) {
-      createFieldinList4();
+      createFieldinList4(i);
     }
   }
 }
@@ -58,27 +61,33 @@ function insertTasktoMatrix() {
  * This function create fields for the matrix 
  */
 
-function createFieldinList1() {
+function createFieldinList1(id) {
   m = 1;
-  generateHTMLCode();
-  list1.insertAdjacentHTML("beforeend", generatedHTMLCode);
+  let html =  generateListItem(
+    m,
+    allTasks[i].date,
+    allTasks[i].title,
+    allTasks[i].description,
+    id
+  );
+  list1.insertAdjacentHTML("beforeend", html);
 }
 
-function createFieldinList2() {
+function createFieldinList2(id) {
   m = 2;
-  generateHTMLCode();
+  generateHTMLCode(id);
   list2.insertAdjacentHTML("beforeend", generatedHTMLCode);
 }
 
-function createFieldinList3() {
+function createFieldinList3(id) {
   m = 3;
-  generateHTMLCode();
+  generateHTMLCode(id);
   list3.insertAdjacentHTML("beforeend", generatedHTMLCode);
 }
 
-function createFieldinList4() {
+function createFieldinList4(id) {
   m = 4;
-  generateHTMLCode();
+  generateHTMLCode(id);
   list4.insertAdjacentHTML("beforeend", generatedHTMLCode);
 }
 
@@ -92,17 +101,15 @@ function createFieldinList4() {
  * {k,m}  - Parameter to automatic creation of different classes and id´s  
  */
 
-function generateListItem(m, date, title, description) {
+function generateListItem(m, date, title, description, id) {
   html = `<li id="li-${k}" class="li-${m}">
-      <img onclick="deleteTask(${n})" class="garbage_can" src="img/garbage_can.png">
+      <img onclick="deleteTask(${id})" class="garbage_can" src="img/garbage_can.png">
       <span class="date">${date}</span> <br> 
       <span class="title">${title}</span> <br> 
       <span class="description">${description}
     </li>`;
 
-    k++;
-    n++;
-
+  k++;
   return html;
 }
 
@@ -110,12 +117,13 @@ function generateListItem(m, date, title, description) {
  *   In this function the parameter from generateListItem are defined 
  */
 
-function generateHTMLCode() {
+function generateHTMLCode(id) {
   generatedHTMLCode = generateListItem(
     m,
     allTasks[i].date,
     allTasks[i].title,
-    allTasks[i].description
+    allTasks[i].description,
+    id
   );
 }
 
@@ -125,13 +133,10 @@ function generateHTMLCode() {
 
 function deleteTask(n) {
 
-  allTasks.splice(n,1);
+  allTasks.splice(n, 1);
+  let allTasksAsString = JSON.stringify(allTasks);
+  localStorage.setItem('data', allTasksAsString);
 
-  allTasks = JSON.stringify(allTasks);
-
-  localStorage.setItem('data',allTasks);
-
-  location.reload();
-
-
+  // location.reload();
+  insertTasktoMatrix();
 }

@@ -26,11 +26,11 @@
         <div class="head" id="head">
             <h1 class="h1-AddTask">Add Task</h1>
         </div>
-        <div class="mainWindow" id="mainWindow">
+        <form class="mainWindow" id="mainWindow" onsubmit="addTask()">
             <div class="taskColumn">
                 <div class="form-group">
                 <label for="exampleFormControlInput1"><h3>Title</h3></label>
-                <input type="text" minlength="3" class="form-control" id="title" placeholder="Title">
+                <input type="text" required minlength="3" class="form-control" id="title" placeholder="Title">
                 </div>
               
                 <div class="form-group">
@@ -57,7 +57,7 @@
 
                  <div class="form-group">
                  <label for="exampleFormControlInput1"><h3>Date</h3></label>
-                 <input id="date" type="date" min="" class="form-control" id="exampleFormControlInput1" >
+                 <input id="date" type="date" min="" class="form-control" id="exampleFormControlInput1">
                </div>
 
                  <div class="form-group">
@@ -66,12 +66,12 @@
                 </div>
                 
                 <div class="buttonPosition">
-                    <div id="cancle" class="btn btn1 btn-danger" onclick="emptyFields()">
+                    <button id="cancle" class="btn btn1 btn-danger" onclick="emptyFields()">
                         Cancle
-                    </div>
-                    <div id="AddTask" class="btn btn2 btn-success" onclick="addTask()">
+                    </button>
+                    <button type="submit" id="AddTask" class="btn btn2 btn-success">
                         Add Task
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
