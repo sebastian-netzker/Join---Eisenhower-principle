@@ -2,7 +2,7 @@ let priorityStatus = "high";
 let status = 0;
 let listArray = [];
 function createItemsToTheList(title, priorityStatus, discription, i) {
-    console.log('create:' + i);
+    // console.log('create:' + i);
     let item = `
         <li class="item" id="item${i}">
        
@@ -41,6 +41,8 @@ function deleteItemList(id) {
     let item = document.getElementById('item' + id);
     item.parentNode.removeChild(item);
     allTasks.splice(id, 1);
+
+    localStorage.setItem('data', JSON.stringify(allTasks));
 
 
 }
