@@ -10,6 +10,7 @@
    
 
     <script src="scriptSimon.js"></script>
+    <script src="scriptSebastian.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -25,11 +26,32 @@
     <div class="row2">
         <div class="head" id="head">
             <h1 class="h1-AddTask">Add Task</h1>
-            <a href="#" class="burger-menu">
+
+            <a onclick="showMenu()" href="#" class="burger-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </a>
+
+            
+                <div id="overlay-menu" class="overlay-menu">
+                    <a  href="addTask.html">AddTask</a>
+                    <a  href="matrix.html">Matrix</a>
+                    <a  href="list.html">List</a>
+                    <a  href="#">Imprint</a>
+                    <a  href="#">Dataprotection</a>
+                    <a  href="#">Help</a>
+
+
+                     <a onclick="closeMenu()" href="#" class="burger-menu closing-burger-menu">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  </a>
+                </div>
+
+
+            
         </div>
         <form class="mainWindow" id="mainWindow" onsubmit="addTask()">
             <div class="taskColumn">

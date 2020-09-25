@@ -2,6 +2,25 @@
 let i;
 
 /**
+ * This function open the responsive Menu 
+ */
+
+
+function showMenu(){
+
+  document.getElementById("overlay-menu").classList.add("show-overlay-menu");
+}
+
+/**
+ * This function close the responsive menu 
+ */
+
+function closeMenu() {
+
+  document.getElementById("overlay-menu").classList.remove("show-overlay-menu");
+}
+
+/**
  * This function decided wehere the field is added
  */
 
