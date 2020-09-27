@@ -456,11 +456,16 @@ p {
 .help-body {
     margin: 30px;
     background-color: rgb(252, 252, 252);
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .helpClass {
     font-family: 'Noto Sans JP', sans-serif;
     color: black;
+}
+
+.help-cont {
+    overflow-y: scroll;
 }
 
 /*responsive*/
