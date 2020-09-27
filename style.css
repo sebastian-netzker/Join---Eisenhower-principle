@@ -446,6 +446,10 @@ p {
     width: 65%;
 }
 
+.taskListCont {
+    overflow-y: scroll;
+}
+
 /*responsive*/
 
 @media(max-width:1110px) {

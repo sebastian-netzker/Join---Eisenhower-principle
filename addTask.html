@@ -4,10 +4,10 @@
     <title>eisenhower principle</title>
     <meta charset="utf-8">
 
-     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="style.css">
-   
+
 
     <script src="scriptSimon.js"></script>
     <script src="scriptSebastian.js"></script>
@@ -19,9 +19,15 @@
     <div class="sidebar" id="sidebar">
 
         <img class="joinlogo" src="img/joinlogo.png" alt="">
-        <a href="addTask.html"><h2 class="button btnAddTask" style="text-decoration: underline;" id="btnAddTask">Add Task</h2></a>
-        <a href="matrix.html"><h2 class="button btnMatrix" id="btnMatrix">Matrix</h2></a>
-        <a href="list.html"><h2 class="button btnList" id="btnList">List</h2></a>
+        <a href="addTask.html">
+            <h2 class="button btnAddTask" style="text-decoration: underline;" id="btnAddTask">Add Task</h2>
+        </a>
+        <a href="matrix.html">
+            <h2 class="button btnMatrix" id="btnMatrix">Matrix</h2>
+        </a>
+        <a href="list.html">
+            <h2 class="button btnList" id="btnList">List</h2>
+        </a>
     </div>
     <div class="row2">
         <div class="head" id="head">
@@ -33,75 +39,85 @@
                 <span class="bar"></span>
             </a>
 
-            
-                <div id="overlay-menu" class="overlay-menu">
-                    <a  href="addTask.html">AddTask</a>
-                    <a  href="matrix.html">Matrix</a>
-                    <a  href="list.html">List</a>
-                    <a  href="#">Imprint</a>
-                    <a  href="#">Dataprotection</a>
-                    <a  href="#">Help</a>
+
+            <div id="overlay-menu" class="overlay-menu">
+                <a href="addTask.html">AddTask</a>
+                <a href="matrix.html">Matrix</a>
+                <a href="list.html">List</a>
+                <a href="#">Imprint</a>
+                <a href="#">Dataprotection</a>
+                <a href="#">Help</a>
 
 
-                     <a onclick="closeMenu()" href="#" class="burger-menu closing-burger-menu">
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  <span class="bar"></span>
-                  </a>
-                </div>
+                <a onclick="closeMenu()" href="#" class="burger-menu closing-burger-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
 
 
-            
+
         </div>
         <form class="mainWindow" id="mainWindow" onsubmit="addTask()">
             <div class="taskColumn">
                 <div class="form-group">
-                <label for="exampleFormControlInput1"><h3>Title</h3></label>
-                <input type="text" required minlength="3" class="form-control" id="title" placeholder="Title">
-                </div>
-              
-                <div class="form-group">
-                <label for="exampleFormControlSelect1"><h3>Urgency</h3></label>
-                <select class="form-control" id="urgency">
-                <option>High Urgency</option>
-                <option>Low Urgency</option>
-                </select>
+                    <label for="exampleFormControlInput1">
+                        <h3>Title</h3>
+                    </label>
+                    <input type="text" required minlength="3" class="form-control" id="title" placeholder="Title">
                 </div>
 
                 <div class="form-group">
-                <label for="exampleFormControlSelect1"><h3>Importance</h3></label>
-                <select class="form-control" id="importance">
-                <option>High Importance</option>
-                <option>Low Importance</option>
-                </select>
+                    <label for="exampleFormControlSelect1">
+                        <h3>Urgency</h3>
+                    </label>
+                    <select class="form-control" id="urgency">
+                        <option>High Urgency</option>
+                        <option>Low Urgency</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">
+                        <h3>Importance</h3>
+                    </label>
+                    <select class="form-control" id="importance">
+                        <option>High Importance</option>
+                        <option>Low Importance</option>
+                    </select>
                 </div>
 
             </div>
             <div class="taskColumn">
 
-                
-               
 
-                 <div class="form-group">
-                 <label for="exampleFormControlInput1"><h3>Date</h3></label>
-                 <input id="date" type="date" min="" class="form-control" id="exampleFormControlInput1">
-               </div>
 
-                 <div class="form-group">
-                 <label for="exampleFormControlTextarea1"> <h3>Description</h3></label>
-                 <textarea class="form-control" id="description" rows="7"></textarea>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">
+                        <h3>Date</h3>
+                    </label>
+                    <input id="date" type="date" min="" class="form-control" id="exampleFormControlInput1">
                 </div>
-                
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">
+                        <h3>Description</h3>
+                    </label>
+                    <textarea class="form-control" id="description" rows="7"></textarea>
+                </div>
+
                 <div class="buttonPosition">
                     <button id="cancle" class="btn btn1 btn-danger" onclick="emptyFields()">
-                        Cancle
+                        Cancel
                     </button>
                     <button type="submit" id="AddTask" class="btn btn2 btn-success">
                         Add Task
                     </button>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
 </body>
 
