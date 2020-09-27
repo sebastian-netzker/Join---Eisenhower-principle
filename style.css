@@ -378,7 +378,7 @@ p {
 
 .closing-burger-menu {
     position: absolute !important;
-    top: 35px !important;
+    top: 20px !important;
     right: 25px;
 }
 
@@ -474,7 +474,7 @@ p {
         margin: 0;
     }
     .sidebar {
-        position: fixed !important;
+        position: absolute;
         display: flex !important;
         align-items: center !important;
         justify-content: space-around !important;
@@ -495,6 +495,15 @@ p {
         margin: 0 !important;
         padding: 0 !important;
         height: -webkit-fill-available;
+        
+       
+    }
+
+    .mainWindow-matrix{
+
+        height: 120vh ;
+        display: flex;
+        align-items: center;
     }
     .row2 {
         width: 100%;
@@ -507,7 +516,8 @@ p {
         width: 100%;
     }
     .joinlogo {
-        left: -20px;
+        position: absolute;
+        left: 25px;
         width: 35px;
         padding: 0 !important;
     }
@@ -530,31 +540,38 @@ p {
         padding-top: 8px;
     }
     .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
-        height: 110px;
-        width: 250px;
-        left: 90px;
+        height: 120px;
+        width: 70vw;
+        left: unset;
+        right: unset;
+        
+    }
+
+    .importance{
+        left: 0px;
     }
     .important-urgent {
-        top: 120px;
+        top: 100px;
     }
     .important-noturgent {
-        top: 280px;
+        top: 240px;
     }
     .notimportant-urgent {
-        top: 480px;
+        top: 430px;
     }
     .notimportant-noturgent {
-        top: 650px;
+        top: 570px;
     }
     .h2-notimportant {
-        left: -40px;
-        top: 540px;
+       
+        top: 470px;
         width: 160px;
         font-size: 25px;
+        left: -40px;
     }
     .h2-important {
         left: -15px;
-        top: 180px;
+        top: 140px;
         font-size: 25px;
     }
     .h2-urgent {
