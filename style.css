@@ -185,7 +185,7 @@ h2 {
     justify-content: space-between;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding: 4px 15px;
+    padding: 15px 10px;
     background-color: rgb(240, 240, 240);
     border-radius: 10px;
     text-align: start;
@@ -204,6 +204,8 @@ li .taskListCont {
     border: 1px solid orange;
     background-color: orange;
     color: white;
+    padding: 5px 10px;
+    font-size: 13px;
 }
 
 .taskColumn {
@@ -278,6 +280,11 @@ h3 {
 
 ul {
     line-height: 110%;
+}
+
+p {
+    color: black;
+    width: 40%;
 }
 
 .li-1, .li-2, .li-3, .li-4 {
@@ -404,6 +411,19 @@ p {
     transform: translateX(0px);
 }
 
+.name-cont {
+    width: 10%;
+}
+
+.sort-cont {
+    width: 20%;
+}
+
+.details {
+    text-align: end;
+    width: 50%;
+}
+
 /*responsive*/
 
 @media(max-width:1110px) {
@@ -426,7 +446,6 @@ p {
         right: 150px;
     }
 }
-
 
 @media(max-width:900px) {
     body {
