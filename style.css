@@ -347,7 +347,6 @@ p {
     color: black;
     margin-top: 0;
     margin-bottom: 0;
-    max-width: 30%;
 }
 
 .burger-menu {
@@ -406,6 +405,11 @@ p {
     transform: translateX(0px);
 }
 
+.date-cont {
+    width: 10%;
+    color: grey;
+}
+
 .name-cont {
     width: 10%;
     font-size: 17px;
@@ -420,13 +424,17 @@ p {
 
 .details {
     text-align: end;
-    width: 50%;
+    width: 10%;
     font-size: 17px;
     color: grey;
 }
 
 .title, .status, .description {
     font-size: 16px;
+}
+
+.dateClass {
+    width: 8%;
 }
 
 .title {
@@ -438,14 +446,22 @@ p {
 }
 
 .description {
-    width: 65%;
+    width: 30%;
 }
 
 .taskListCont {
     overflow-y: scroll;
 }
 
-.dateClass {}
+.help-body {
+    margin: 30px;
+    background-color: rgb(252, 252, 252);
+}
+
+.helpClass {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: black;
+}
 
 /*responsive*/
 
