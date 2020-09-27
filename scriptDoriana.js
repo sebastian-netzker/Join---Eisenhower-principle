@@ -1,10 +1,11 @@
 let priorityStatus = "high";
 let status = 0;
-let listArray = [];
-function createItemsToTheList(title, priorityStatus, discription, i) {
+
+function createItemsToTheList(title, priorityStatus, discription, i, date) {
     let item = `
         <li class="item" id="item${i}">
-       
+
+        <p class="dateClass">${date}</p>
         <p class="title"> ${title}</p>
         <p class="status"> ${priorityStatus}</p>
         <p class="description"> ${discription}</p>
@@ -18,8 +19,6 @@ function createItemsToTheList(title, priorityStatus, discription, i) {
 function insertItemsOnTheList() {
 
     for (let i = 0; i < allTasks.length; i++) {
-        let varx = document.getElementById('item');
-
         if (allTasks[i].importance == "High Importance" && allTasks[i].urgency == "High Urgency") {
             priorityStatus = "High";
 
@@ -30,7 +29,7 @@ function insertItemsOnTheList() {
         else {
             priorityStatus = "Medium";
         }
-        let insertItem = createItemsToTheList(allTasks[i].title, priorityStatus, allTasks[i].description, i,);
+        let insertItem = createItemsToTheList(allTasks[i].title, priorityStatus, allTasks[i].description, i, allTasks[i].date);
         document.getElementById('listItem1').insertAdjacentHTML('beforeend', insertItem);
     }
 }

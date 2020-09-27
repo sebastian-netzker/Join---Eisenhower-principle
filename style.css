@@ -191,7 +191,6 @@ h2 {
     text-align: start;
     font-size: 15px;
     color: gray;
-    border-left: 8px solid orange;
     align-items: center;
 }
 
@@ -201,8 +200,8 @@ li .taskListCont {
 
 .delete {
     border-radius: 2vh;
-    border: 1px solid orange;
-    background-color: orange;
+    border: 1px solid rgb(170, 0, 0);
+    background-color: rgb(170, 0, 0);
     color: white;
     padding: 5px 10px;
     font-size: 13px;
@@ -282,11 +281,6 @@ ul {
     line-height: 110%;
 }
 
-p {
-    color: black;
-    width: 40%;
-}
-
 .li-1, .li-2, .li-3, .li-4 {
     position: relative;
     list-style: none;
@@ -350,6 +344,7 @@ p {
 }
 
 p {
+    color: black;
     margin-top: 0;
     margin-bottom: 0;
     max-width: 30%;
@@ -449,6 +444,8 @@ p {
 .taskListCont {
     overflow-y: scroll;
 }
+
+.dateClass {}
 
 /*responsive*/
 
