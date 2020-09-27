@@ -1,0 +1,216 @@
+<html>
+
+<head>
+    <title>eisenhower principle</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="scriptSimon.js"></script>
+    <script src="scriptDoriana.js"></script>
+    <script src="scriptSebastian.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Voces&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="loadTasks(),insertItemsOnTheList()">
+    <div class="sidebar" id="sidebar">
+
+        <img class="joinlogo" src="img/joinlogo.png" alt="">
+        <a href="addTask.html">
+            <h2 class="button btnAddTask" id="btnAddTask">Add Task</h2>
+        </a>
+        <a href="matrix.html">
+            <h2 class="button btnMatrix" id="btnMatrix">Matrix</h2>
+        </a>
+        <a href="list.html">
+            <h2 class="button btnList" style="text-decoration: underline;" id="btnList">List</h2>
+        </a>
+    </div>
+    <div class="row2">
+        <div class="head" id="head">
+            <h1 class="h1-List">Dataprotection</h1>
+
+            <a onclick="showMenu()" href="#" class="burger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+
+            <div id="overlay-menu" class="overlay-menu">
+                <a href="addTask.html">AddTask</a>
+                <a href="matrix.html">Matrix</a>
+                <a href="list.html">List</a>
+                <a href="imprint.html">Imprint</a>
+                <a href="#">Dataprotection</a>
+                <a href="#">Help</a>
+
+
+                <a onclick="closeMenu()" href="#" class="burger-menu closing-burger-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+
+
+
+        </div>
+        <!--for inserting the selected Title use h1-->
+        <div class="mainWindow" id="mainWindow" style="overflow:scroll">
+            <div class='impressum'>
+                Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung
+                (DSGVO), ist:
+                Max Mustermann
+                <h2 style="color: black;">Ihre Betroffenenrechte</h2>
+                Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten können Sie jederzeit folgende Rechte
+                ausüben:
+                <ul>
+                    <li>Auskunft über Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO),</li>
+                    <li>Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO),</li>
+                    <li>Löschung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO),</li>
+                    <li>Einschränkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten noch
+                        nicht löschen dürfen (Art. 18 DSGVO),</li>
+                    <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO) und</li>
+                    <li>Datenübertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen Vertrag
+                        mit uns abgeschlossen haben (Art. 20 DSGVO).</li>
+                </ul>
+                Sofern Sie uns eine Einwilligung erteilt haben, können Sie diese jederzeit mit Wirkung für die Zukunft
+                widerrufen.
+                Sie können sich jederzeit mit einer Beschwerde an eine Aufsichtsbehörde wenden, z. B. an die zuständige
+                Aufsichtsbehörde des Bundeslands Ihres Wohnsitzes oder an die für uns als verantwortliche Stelle
+                zuständige Behörde.
+                Eine Liste der Aufsichtsbehörden (für den nichtöffentlichen Bereich) mit Anschrift finden Sie unter: <a
+                    href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html"
+                    target="_blank"
+                    rel="nofollow noopener">https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html</a>.
+                <h2 style="color: black;">Kommentarfunktion</h2>
+                <h3>Art und Zweck der Verarbeitung:</h3>
+                Wenn Nutzer Kommentare auf unserer Website hinterlassen, werden neben diesen Angaben auch der Zeitpunkt
+                ihrer Erstellung und der zuvor durch den Websitebesucher gewählte Nutzername gespeichert. Dies dient
+                unserer Sicherheit, da wir für widerrechtliche Inhalte auf unserer Webseite belangt werden können, auch
+                wenn diese durch Benutzer erstellt wurden.
+                <h3>Rechtsgrundlage:</h3>
+                Die Verarbeitung der als Kommentar eingegebenen Daten erfolgt auf der Grundlage eines berechtigten
+                Interesses (Art. 6 Abs. 1 lit. f DSGVO).
+                Durch Bereitstellung der Kommentarfunktion möchten wir Ihnen eine unkomplizierte Interaktion
+                ermöglichen. Ihre gemachten Angaben werden zum Zwecke der Bearbeitung der Anfrage sowie für mögliche
+                Anschlussfragen gespeichert.
+                <h3>Empfänger:</h3>
+                Empfänger der Daten sind ggf. Auftragsverarbeiter.
+                <h3>Speicherdauer:</h3>
+                Die Daten werden gelöscht, sobald diese für den Zweck der Erhebung nicht mehr erforderlich sind. Dies
+                ist grundsätzlich der Fall, wenn die Kommunikation mit dem Nutzer abgeschlossen ist und das Unternehmen
+                den Umständen entnehmen kann, dass der betroffene Sachverhalt abschließend geklärt ist.
+                <h3>Bereitstellung vorgeschrieben oder erforderlich:</h3>
+                Die Bereitstellung Ihrer personenbezogenen Daten erfolgt freiwillig. Ohne die Bereitstellung Ihrer
+                personenbezogenen Daten können wir Ihnen keinen Zugang zu unserer Kommentarfunktion gewähren.
+                <h2 style="color: black;">Verwendung von Google Analytics</h2>
+                <h3>Art und Zweck der Verarbeitung:</h3>
+                Diese Website benutzt Google Analytics, einen Webanalysedienst der Google LLC, 1600 Amphitheatre
+                Parkway, Mountain View, CA 94043 USA (nachfolgend: „Google“). Google Analytics verwendet sog. „Cookies“,
+                also Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der
+                Webseite durch Sie ermöglichen. Die durch das Cookie erzeugten Informationen über Ihre Benutzung dieser
+                Webseite werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
+                Aufgrund der Aktivierung der IP-Anonymisierung auf diesen Webseiten, wird Ihre IP-Adresse von Google
+                jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des
+                Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle
+                IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers
+                dieser Website wird Google diese Informationen benutzen, um Ihre Nutzung der Webseite auszuwerten, um
+                Reports über die Webseitenaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der
+                Internetnutzung verbundene Dienstleistungen gegenüber dem Webseitenbetreiber zu erbringen. Die im Rahmen
+                von Google Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google
+                zusammengeführt.
+                Die Zwecke der Datenverarbeitung liegen in der Auswertung der Nutzung der Website und in der
+                Zusammenstellung von Reports über Aktivitäten auf der Website. Auf Grundlage der Nutzung der Website und
+                des Internets sollen dann weitere verbundene Dienstleistungen erbracht werden.
+                <h3>Rechtsgrundlage:</h3>
+                Die Verarbeitung der Daten erfolgt auf Grundlage einer Einwilligung des Nutzers (Art. 6 Abs. 1 lit. a
+                DSGVO).
+                <h3>Empfänger:</h3>
+                Empfänger der Daten ist Google als Auftragsverarbeiter. Hierfür haben wir mit Google den entsprechenden
+                Auftragsverarbeitungsvertrag abgeschlossen.
+                <h3>Speicherdauer:</h3>
+                Die Löschung der Daten erfolgt, sobald diese für unsere Aufzeichnungszwecke nicht mehr erforderlich
+                sind.
+                <h3>Drittlandtransfer:</h3>
+                Google verarbeitet Ihre Daten in den USA und hat sich dem EU_US Privacy Shield unterworfen <a
+                    href="https://www.privacyshield.gov/EU-US-Framework">https://www.privacyshield.gov/EU-US-Framework</a>.
+                <h3>Bereitstellung vorgeschrieben oder erforderlich:</h3>
+                Die Bereitstellung Ihrer personenbezogenen Daten erfolgt freiwillig, allein auf Basis Ihrer
+                Einwilligung. Sofern Sie den Zugriff unterbinden, kann es hierdurch zu Funktionseinschränkungen auf der
+                Website kommen.
+                <h3>Widerruf der Einwilligung:</h3>
+                Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software
+                verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche
+                Funktionen dieser Website vollumfänglich werden nutzen können. Sie können darüber hinaus die Erfassung
+                der durch das Cookie erzeugten und auf Ihre Nutzung der Webseite bezogenen Daten (inkl. Ihrer
+                IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter
+                dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren: <a
+                    href="http://tools.google.com/dlpage/gaoptout?hl=de">Browser Add On zur Deaktivierung von Google
+                    Analytics</a>.
+                Zusätzlich oder als Alternative zum Browser-Add-On können Sie das Tracking durch Google Analytics auf
+                unseren Seiten unterbinden, indem Sie <a title="Google Analytics Opt-Out-Cookie setzen"
+                    onClick="gaOptout();alert('Google Analytics wurde deaktiviert');" href="#">diesen Link
+                    anklicken</a>. Dabei wird ein Opt-out-Cookie auf Ihrem Gerät installiert. Damit wird die Erfassung
+                durch Google Analytics für diese Website und für diesen Browser zukünftig verhindert, so lange das
+                Cookie in Ihrem Browser installiert bleibt.
+                <h3>Profiling:</h3>
+                Mit Hilfe des Tracking-Tools Google Analytics kann das Verhalten der Besucher der Webseite bewertet und
+                die Interessen analysiert werden. Hierzu erstellen wir ein pseudonymes Nutzerprofil.
+                <h2 style="color: black;">Verwendung von Scriptbibliotheken (Google Webfonts)</h2>
+                <h3>Art und Zweck der Verarbeitung:</h3>
+                Um unsere Inhalte browserübergreifend korrekt und grafisch ansprechend darzustellen, verwenden wir auf
+                dieser Website „Google Web Fonts“ der Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043,
+                USA; nachfolgend „Google“) zur Darstellung von Schriften.
+                Die Datenschutzrichtlinie des Bibliothekbetreibers Google finden Sie hier: <a
+                    href="https://www.google.com/policies/privacy/">https://www.google.com/policies/privacy/</a>
+                <h3>Rechtsgrundlage:</h3>
+                Rechtsgrundlage für die Einbindung von Google Webfonts und dem damit verbundenen Datentransfer zu Google
+                ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+                <h3>Empfänger:</h3>
+                Der Aufruf von Scriptbibliotheken oder Schriftbibliotheken löst automatisch eine Verbindung zum
+                Betreiber der Bibliothek aus. Dabei ist es theoretisch möglich – aktuell allerdings auch unklar ob und
+                ggf. zu welchen Zwecken – dass der Betreiber in diesem Fall Google Daten erhebt.
+                <h3>Speicherdauer:</h3>
+                Wir erheben keine personenbezogenen Daten, durch die Einbindung von Google Webfonts.
+                Weitere Informationen zu Google Web Fonts finden Sie unter <a
+                    href="https://developers.google.com/fonts/faq">https://developers.google.com/fonts/faq</a> und in
+                der Datenschutzerklärung von Google: <a
+                    href="https://www.google.com/policies/privacy/">https://www.google.com/policies/privacy/</a>.
+                <h3>Drittlandtransfer:</h3>
+                Google verarbeitet Ihre Daten in den USA und hat sich dem EU_US Privacy Shield unterworfen <a
+                    href="https://www.privacyshield.gov/EU-US-Framework">https://www.privacyshield.gov/EU-US-Framework</a>.
+                <h3>Bereitstellung vorgeschrieben oder erforderlich:</h3>
+                Die Bereitstellung der personenbezogenen Daten ist weder gesetzlich, noch vertraglich vorgeschrieben.
+                Allerdings kann ggfs. die korrekte Darstellung der Inhalte durch Standardschriften nicht möglich sein.
+                <h3>Widerruf der Einwilligung:</h3>
+                Zur Darstellung der Inhalte wird regelmäßig die Programmiersprache JavaScript verwendet. Sie können der
+                Datenverarbeitung daher widersprechen, indem Sie die Ausführung von JavaScript in Ihrem Browser
+                deaktivieren oder einen JavaScript-Blocker installieren. Bitte beachten Sie, dass es hierdurch zu
+                Funktionseinschränkungen auf der Website kommen kann.
+                <h2 style="color: black;">Änderung unserer Datenschutzbestimmungen</h2>
+                Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen
+                Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen,
+                z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue
+                Datenschutzerklärung.
+                <h2 style="color: black;">Fragen an den Datenschutzbeauftragten</h2>
+                Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt
+                an die für den Datenschutz verantwortliche Person in unserer Organisation:
+                <em>Die Datenschutzerklärung wurde mithilfe der activeMind AG erstellt, den Experten für <a
+                        href="https://www.activemind.de/datenschutz/datenschutzbeauftragter/" target="_blank"
+                        rel="noopener">externe Datenschutzbeauftragte</a> (Version #2019-04-10).</em>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
