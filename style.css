@@ -398,7 +398,7 @@ p {
 
 .overlay-menu a {
     position: relative;
-    top: 55px;
+    top: 70px;
     font-size: 30px;
     text-decoration: none;
     color: white;
@@ -495,13 +495,9 @@ p {
         margin: 0 !important;
         padding: 0 !important;
         height: -webkit-fill-available;
-        
-       
     }
-
-    .mainWindow-matrix{
-
-        height: 120vh ;
+    .mainWindow-matrix {
+        height: 120vh;
         display: flex;
         align-items: center;
     }
@@ -532,6 +528,10 @@ p {
         margin-right: 4px;
         padding: 0px;
     }
+    .overlay-menu a {
+        font-size: 25px;
+        padding-bottom: 55px;
+    }
     h3 {
         font-size: 15px;
     }
@@ -544,10 +544,8 @@ p {
         width: 70vw;
         left: unset;
         right: unset;
-        
     }
-
-    .importance{
+    .importance {
         left: 0px;
     }
     .important-urgent {
@@ -563,7 +561,6 @@ p {
         top: 570px;
     }
     .h2-notimportant {
-       
         top: 470px;
         width: 160px;
         font-size: 25px;
@@ -617,7 +614,7 @@ p {
     }
 }
 
-@media(min-device-width: 451px) and (max-device-width: 600px) {
+@media(min-device-width: 451px) and (max-device-width: 899px) {
     .sidebar {
         position: absolute !important;
         display: flex !important;
@@ -699,5 +696,35 @@ p {
     }
     .buttonPosition {
         top: 10px
+    }
+}
+
+@media(max-width:450px) {
+    .h2-important {
+        left: -25px;
+        top: 150px;
+    }
+    .h2-notimportant {
+        left: -50px;
+        top: 480px;
+    }
+    .important-urgent {
+        top: 120px;
+    }
+    .important-noturgent {
+        top: 260px;
+    }
+    .notimportant-urgent {
+        top: 450px;
+    }
+    .notimportant-noturgent {
+        top: 590px;
+    }
+    .mainWindow-matrix {
+        height: 90vh;
+    }
+    .overlay-menu a {
+        font-size: 30px;
+        padding-bottom: 80px;
     }
 }
