@@ -411,13 +411,13 @@ p {
 }
 
 .name-cont {
-    width: 10%;
+    width: 17%;
     font-size: 17px;
     color: grey;
 }
 
 .sort-cont {
-    width: 20%;
+    width: 46%;
     font-size: 17px;
     color: grey;
 }
@@ -488,6 +488,9 @@ p {
     }
     .h2-noturgent {
         right: 150px;
+    }
+    .title, .dateClass, .status, .description {
+        font-size: 15px;
     }
 }
 
@@ -634,6 +637,25 @@ p {
     .delete {
         font-size: 12px;
     }
+    .dateClass {
+        width: 100%;
+    }
+    .title {
+        width: 100%;
+    }
+    .status {
+        width: 100%;
+    }
+    .description {
+        width: 100%;
+    }
+    .dateClass, .status, .description {
+        font-size: 15px;
+    }
+    .title {
+        font-size: 15px;
+        font-weight: bold;
+    }
 }
 
 @media(min-device-width: 451px) and (max-device-width: 899px) {
@@ -748,5 +770,27 @@ p {
     .overlay-menu a {
         font-size: 30px;
         padding-bottom: 80px;
+    }
+    .date-cont {
+        font-size: 17px;
+    }
+    .dateClass {
+        width: 100%;
+    }
+    .title {
+        width: 100%;
+    }
+    .status {
+        width: 100%;
+    }
+    .description {
+        width: 100%;
+    }
+    .dateClass, .status, .description {
+        font-size: 13px;
+    }
+    .title {
+        font-size: 14px;
+        font-weight: bold;
     }
 }
