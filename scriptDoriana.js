@@ -5,9 +5,9 @@ function createItemsToTheList(title, priorityStatus, discription, i) {
     let item = `
         <li class="item" id="item${i}">
        
-        <p> ${title}</p>
-        <p> ${priorityStatus}</p>
-        <p> ${discription}</p>
+        <p class="title"> ${title}</p>
+        <p class="status"> ${priorityStatus}</p>
+        <p class="description"> ${discription}</p>
         <button onclick="deleteItemList(${i})"class="delete">Delete Task</button>
         </li>
          `;
