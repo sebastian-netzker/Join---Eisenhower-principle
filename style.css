@@ -41,11 +41,18 @@ h1 {
 }
 
 .btnAddTask {
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 .btnMatrix, .btnList {
-    padding-top: 70px;
+    padding-top: 30px;
+}
+
+.btnHelp, .btnDataprotection, .btnImprint{
+    font-size: 15px;
+    padding-top: 30px;
+
+
 }
 
 .sidebar {
@@ -128,7 +135,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 20px;
     margin-top: unset;
     line-height: unset;
 }
@@ -401,6 +408,10 @@ p {
     display: block;
 }
 
+.overlay-menu a:hover{
+    color: rgba(141, 141, 141, 0.301);
+}
+
 .show-overlay-menu {
     transform: translateX(0px);
 }
@@ -511,7 +522,7 @@ p {
     h2 {
         font-size: 1rem;
     }
-    .btnAddTask, .btnMatrix, .btnList {
+    .btnAddTask, .btnMatrix, .btnList, .btnDataprotection, .btnImprint, .btnHelp {
         display: none;
     }
     .mainWindow {
