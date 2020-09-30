@@ -1,0 +1,135 @@
+<html>
+
+<head>
+    <title>eisenhower principle</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="scriptSimon.js"></script>
+    <script src="scriptDoriana.js"></script>
+    <script src="scriptSebastian.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Voces&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body onload="loadTasks(),insertItemsOnTheList()">
+    <div class="sidebar" id="sidebar">
+
+        <img class="joinlogo" src="img/joinlogo.png" alt="">
+        <a href="addTask.html">
+            <h2 class="button btnAddTask" id="btnAddTask">Add Task</h2>
+        </a>
+        <a href="matrix.html">
+            <h2 class="button btnMatrix" id="btnMatrix">Matrix</h2>
+        </a>
+        <a href="list.html">
+            <h2 class="button btnList" id="btnList">List</h2>
+        </a>
+        <a href="help.html">
+            <h2 class="button btnHelp" style="text-decoration: underline;"  id="btnHelp">Help</h2>
+        </a>
+        <a href="imprint.html">
+            <h2 class="button btnImprint" id="btnImprint">Imprint</h2>
+        </a>
+        <a href="dataprotection.html">
+            <h2 class="button btnDataprotection" id="btnDataprotection">Dataprotection</h2>
+        </a>
+    </div>
+    <div class="row2">
+        <div class="head" id="head">
+            <h1 class="h1-List">Help Page</h1>
+
+            <a onclick="showMenu()" href="#" class="burger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
+
+            <div id="overlay-menu" class="overlay-menu">
+                <a href="addTask.html">AddTask</a>
+                <a href="matrix.html">Matrix</a>
+                <a href="list.html">List</a>
+                <a  href="help.html">Help</a>
+                <a  href="imprint.html">Imprint</a>
+                <a  href="dataprotection.html">Dataprotection</a>
+
+
+                <a onclick="closeMenu()" href="#" class="burger-menu closing-burger-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+            </div>
+
+
+
+        </div>
+        <!--for inserting the selected Title use h1-->
+        <div class="mainWindow" id="mainWindow">
+            <div class="help-cont">
+                <div class="ClassHelp">
+
+                    <h4 class="helpClass">Description about the Task Management App.</h4>
+
+                    <h2 class="helpClass"> How works Add Task?</h2>
+                    <img width="800" height="450" src="img/addTask.png">
+                    <ul class="helpClass">
+                        <li class="helpClass"> TITLE: You can here introduce the Name of the Task.</li>
+                        <li class="helpClass"> URGENCY: Help to set the urgency status from the task either high urgent
+                            or low
+                            urgent.</li>
+                        <li class="helpClass">IMPORTANCE: This area is used to place the priority of a specified
+                            task,similary to
+                            urgency high or low.
+                        </li>
+                        <li class="helpClass">DATE: To create a current date, you click on the square item and select
+                            the desired
+                            date.</li>
+                        <li class="helpClass">DESCRIPTION: In this field you can describe your task.</li>
+                        <li class="helpClass">CANCEL: Button to abandon a task.</li>
+                        <li class="helpClass">ADD TASK: Button to save a task.</li>
+                    </ul>
+
+                    <h2 class="helpClass">How are the tasks displayed in Matrix?</h2>
+                    <img width="800" height="450" src="img/matrix.png">
+                    <p class="helpClass"> In this area all Tasks you created are organized in four Categories that help
+                        you to
+                        prioritise them
+                        better.They are displayed according to importance and urgency.
+                    <ul class="helpClass">
+                        <li class="helpClass">ADD TASK Link: Click on the add Task Link to create a new Task.</li>
+                        <li class="helpClass">MATRIX Link: Press on the Matrix Link to view all Tasks categorized by
+                            priorities.
+                        </li>
+                        <li class="helpClass">LIST Link: Click on the List Link to view the listed Tasks.</li>
+                        <li class="helpClass">DELETE Task: Click on the delete button to delete a specified task.</li>
+                        <li class="helpClass">SCROLL: Scroll the Button to see all Tasks displayed in a list Form.</li>
+                    </ul>
+                    </p>
+                    <h2 class="helpClass"> How are the Tasks displayed in the List?</h2>
+                    <img width="800" height="450" src="img/list.png">
+                    <p class="helpClass">In this section the created Tasks are saved as a List.</p>
+                    <ul class="helpClass">
+                        <li class="helpClass">DATE: The date when the Task was created.</li>
+                        <li class="helpClass">NAME: Represents the Name of the Task.</li>
+                        <li class="helpClass">PRIORITY STATUS: Communicate the level of a specified Task: low, medium or
+                            high.</li>
+                        <li class="helpClass">DESCRIPTION: Represents the Description from the Task. </li>
+                        <li class="helpClass">DELETE TASK: Delete a created Task.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

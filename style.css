@@ -41,11 +41,18 @@ h1 {
 }
 
 .btnAddTask {
-    padding-top: 60px;
+    padding-top: 70px;
 }
 
 .btnMatrix, .btnList {
-    padding-top: 70px;
+    padding-top: 30px;
+}
+
+.btnHelp, .btnDataprotection, .btnImprint{
+    font-size: 15px;
+    padding-top: 30px;
+
+
 }
 
 .sidebar {
@@ -129,7 +136,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 20px;
     margin-top: unset;
     line-height: unset;
 }
@@ -192,7 +199,6 @@ h2 {
     text-align: start;
     font-size: 15px;
     color: gray;
-    border-left: 8px solid orange;
     align-items: center;
 }
 
@@ -202,8 +208,8 @@ li .taskListCont {
 
 .delete {
     border-radius: 2vh;
-    border: 1px solid orange;
-    background-color: orange;
+    border: 1px solid rgb(170, 0, 0);
+    background-color: rgb(170, 0, 0);
     color: white;
     padding: 5px 10px;
     font-size: 13px;
@@ -283,11 +289,6 @@ ul {
     line-height: 110%;
 }
 
-p {
-    color: black;
-    width: 40%;
-}
-
 .li-1, .li-2, .li-3, .li-4 {
     position: relative;
     list-style: none;
@@ -351,9 +352,9 @@ p {
 }
 
 p {
+    color: black;
     margin-top: 0;
     margin-bottom: 0;
-    max-width: 30%;
 }
 
 .burger-menu {
@@ -408,31 +409,44 @@ p {
     display: block;
 }
 
+.overlay-menu a:hover{
+    color: rgba(141, 141, 141, 0.301);
+}
+
 .show-overlay-menu {
     transform: translateX(0px);
 }
 
-.name-cont {
+.date-cont {
     width: 10%;
+    color: grey;
+}
+
+.name-cont {
+    width: 17%;
     font-size: 17px;
     color: grey;
 }
 
 .sort-cont {
-    width: 20%;
+    width: 46%;
     font-size: 17px;
     color: grey;
 }
 
 .details {
     text-align: end;
-    width: 50%;
+    width: 10%;
     font-size: 17px;
     color: grey;
 }
 
 .title, .status, .description {
     font-size: 16px;
+}
+
+.dateClass {
+    width: 8%;
 }
 
 .title {
@@ -444,10 +458,25 @@ p {
 }
 
 .description {
-    width: 65%;
+    width: 30%;
 }
 
 .taskListCont {
+    overflow-y: scroll;
+}
+
+.help-body {
+    margin: 30px;
+    background-color: rgb(252, 252, 252);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.helpClass {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: black;
+}
+
+.help-cont {
     overflow-y: scroll;
 }
 
@@ -472,6 +501,9 @@ p {
     .h2-noturgent {
         right: 150px;
     }
+    .title, .dateClass, .status, .description {
+        font-size: 15px;
+    }
 }
 
 @media(max-width:900px) {
@@ -491,7 +523,7 @@ p {
     h2 {
         font-size: 1rem;
     }
-    .btnAddTask, .btnMatrix, .btnList {
+    .btnAddTask, .btnMatrix, .btnList, .btnDataprotection, .btnImprint, .btnHelp {
         display: none;
     }
     .mainWindow {
@@ -617,6 +649,25 @@ p {
     .delete {
         font-size: 12px;
     }
+    .dateClass {
+        width: 100%;
+    }
+    .title {
+        width: 100%;
+    }
+    .status {
+        width: 100%;
+    }
+    .description {
+        width: 100%;
+    }
+    .dateClass, .status, .description {
+        font-size: 15px;
+    }
+    .title {
+        font-size: 15px;
+        font-weight: bold;
+    }
 }
 
 @media(min-device-width: 451px) and (max-device-width: 899px) {
@@ -731,5 +782,27 @@ p {
     .overlay-menu a {
         font-size: 30px;
         padding-bottom: 80px;
+    }
+    .date-cont {
+        font-size: 17px;
+    }
+    .dateClass {
+        width: 100%;
+    }
+    .title {
+        width: 100%;
+    }
+    .status {
+        width: 100%;
+    }
+    .description {
+        width: 100%;
+    }
+    .dateClass, .status, .description {
+        font-size: 13px;
+    }
+    .title {
+        font-size: 14px;
+        font-weight: bold;
     }
 }
