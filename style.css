@@ -88,6 +88,7 @@ h1 {
     margin-right: -16px;
     padding: 8px;
     display: flex;
+    margin-block-end: 0;
 }
 
 .urgency {
