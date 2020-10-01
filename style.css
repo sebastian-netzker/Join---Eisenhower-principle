@@ -46,35 +46,32 @@ h1 {
 
 .btnMatrix:hover, .btnAddTask:hover, .btnList:hover, .btnHelp:hover, .btnDataprotection:hover, .btnImprint:hover {
     border-left: 5px solid grey;
+    margin-left: -6px;
     color: grey;
     font-weight: bold;
 }
 
-.btnAddTask{
+.btnAddTask {
     top: 180px;
 }
 
-.btnMatrix{
+.btnMatrix {
     top: 240px;
 }
 
-.btnList{
-    top:300px;
-
+.btnList {
+    top: 300px;
 }
 
-.btnHelp{
-    top:360px;
-
+.btnHelp {
+    top: 360px;
 }
 
-.btnImprint{
-    top:420px;
+.btnImprint {
+    top: 420px;
 }
 
-
-.btnDataprotection{
-
+.btnDataprotection {
     top: 480px;
 }
 
@@ -416,7 +413,7 @@ p {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(145, 164, 248, 0.904);
+    background-color: rgba(145, 164, 248, 1);
     transform: translateX(100%);
     transition: all 225ms ease-in-out;
 }
@@ -434,10 +431,25 @@ p {
 
 .overlay-menu a:hover {
     color: rgba(141, 141, 141, 0.301);
+    font-weight: bold;
 }
 
 .show-overlay-menu {
     transform: translateX(0px);
+}
+
+.closeMenu-x {
+    font-size: 40px;
+    position: absolute;
+    top: -20px;
+    right: 0px;
+}
+
+.closeMenu-x:hover{
+    color: white;
+    font-weight: normal;
+
+
 }
 
 .date-cont {
