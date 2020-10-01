@@ -1,4 +1,5 @@
 let allTasks = [];
+const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
 /**
  * This function will empty all entries in the add Task form. The previous added Information will not be changed
  */
@@ -37,27 +38,64 @@ function gererateTaskObject() {
 function addTask() {
     let t = gererateTaskObject();
     allTasks.push(t);
-
+   
     tasksString = JSON.stringify(allTasks);
-    localStorage.setItem('data', tasksString);
+    saveJSONToServer(allTasks);
+    //localStorage.setItem('data', tasksString); disabled - the JSON is saved on the Server
+
     emptyFields();
     let html = "<div id='popup' class='transparentgray'><div class='popup'><h5>A new Task with the Title " + t.title + " has been added!</h5>You have set " + t.importance + " and " + t.urgency + "!</div></div>";
     document.getElementById("mainWindow").insertAdjacentHTML('beforeEnd', html);
     setTimeout(function () {
         document.getElementById('popup').remove();
-    }, 4000);
+    }, 8000);
+}
+
+/**
+ * Saves a JSON or JSON Array to the Server
+ * payload {JSON | Array} - The payload you want to store
+ */
+function saveJSONToServer(payload) {
+    return new Promise(function (resolve, reject) {
+        let xhttp = new XMLHttpRequest();
+        let serverURL = BASE_SERVER_URL + 'save_json.php';
+        xhttp.open('POST', serverURL); // POST = Erstellen; GET = Abrufen; DELETE = Löschen, PUT = Updaten
+
+        xhttp.onreadystatechange = function (oEvent) {
+            if (xhttp.readyState === 4) { // Nr. 4 bedeutet, dass der Server eine Antwort gesendet hat
+                // Eine Antwort hat 2 Teile: a) Statuscode; b) payload
+                // 404 = Nicht gefunden
+                // 200 = Alles OK
+                // 202 = Datei erstellt
+
+                if (xhttp.status >= 200 && xhttp.status <= 399) { // Alles super, es hat funktioniert!
+                    resolve(xhttp.responseText);
+                } else { // Ein Fehler ist aufgetreten
+                    reject(xhttp.statusText);
+                }
+            }
+        };
+
+        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhttp.send(JSON.stringify(payload));
+
+    });
 }
 
 /**
  * loads the JSON allTasks from local storage, if ther is no 'data' it will be created
  */
 function loadTasks() {
-    if (localStorage.getItem('data') == null) { //if ther is no existing 'data' file in localStorage it will be created
-        localStorage.setItem('data', JSON.stringify([]));
-    } else {
-        let tasksString = localStorage.getItem('data');
-        allTasks = JSON.parse(tasksString);
-    }
+    load();
+    showMyJSON();
+
+
+    //if (localStorage.getItem('data') == null) { //if ther is no existing 'data' file in localStorage it will be created
+    //    localStorage.setItem('data', JSON.stringify([]));
+    //} else {
+    //    let tasksString = localStorage.getItem('data');
+    //    allTasks = JSON.parse(tasksString);
+    //}
 }
 
 /**
@@ -77,4 +115,49 @@ function getToday() {
 
     today = yyyy + '-' + mm + '-' + dd;
     document.getElementById("date").setAttribute("min", today);
+}
+
+/**
+ * Loads myJSON from Server
+ */
+function load() {
+    loadJSONFromServer()
+        .then(function (result) { //then(function (variable vom server))
+            console.log('Laden erfolgreich!', result);
+            allTasks = JSON.parse(result); 
+        })
+        .catch(function (error) { // Fehler
+            console.error('Fehler beim laden!', error);
+        });
+}
+
+/**
+ * Loads a JSON or JSON Array to the Server
+ * payload {JSON | Array} - The payload you want to store
+ */
+function loadJSONFromServer() {
+    return new Promise(function (resolve, reject) {
+        let xhttp = new XMLHttpRequest();
+        let proxy = 'https://cors-anywhere.herokuapp.com/';
+        let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
+        xhttp.open('GET', serverURL);
+
+        xhttp.onreadystatechange = function (oEvent) {
+            if (xhttp.readyState === 4) {
+                if (xhttp.status >= 200 && xhttp.status <= 399) {
+                    resolve(xhttp.responseText);
+                } else {
+                    reject(xhttp.statusText);
+                }
+            }
+        };
+
+        xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhttp.send();
+
+    });
+}
+
+function showMyJSON() {
+    console.log("This is allTasks", allTasks);
 }

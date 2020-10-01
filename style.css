@@ -161,6 +161,10 @@ h2 {
     line-height: unset;
 }
 
+.impressum{
+    padding: 24px;
+}
+
 .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
     position: absolute;
     background-color: white;
