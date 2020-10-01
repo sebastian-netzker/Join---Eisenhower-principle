@@ -66,7 +66,7 @@
 
 
         </div>
-        <form class="mainWindow" id="mainWindow" onsubmit="addTask()">
+        <div class="mainWindow" id="mainWindow" onsubmit=""> 
             <div class="taskColumn">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">
@@ -119,11 +119,12 @@
                     <button id="cancle" class="btn btn1 btn-danger" onclick="emptyFields()">
                         Cancel
                     </button>
-                    <button type="submit" id="AddTask" class="btn btn2 btn-success">
+                    <button type="submit" id="AddTask" class="btn btn2 btn-success" onclick="addTask()">
                         Add Task
                     </button>
                 </div>
             </div>
+        </div>
     </div>
     </div>
 </body>

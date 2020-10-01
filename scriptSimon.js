@@ -40,7 +40,15 @@ function addTask() {
     allTasks.push(t);
    
     tasksString = JSON.stringify(allTasks);
-    saveJSONToServer(allTasks);
+    saveJSONToServer(allTasks)
+        .then(function (result) { //then(function (variable vom server))
+            console.log('Laden erfolgreich!', result);
+            load(); 
+        })
+        .catch(function (error) { // Fehler
+            console.error('Fehler beim laden!', error);
+        });
+    
     //localStorage.setItem('data', tasksString); disabled - the JSON is saved on the Server
 
     emptyFields();
@@ -48,7 +56,7 @@ function addTask() {
     document.getElementById("mainWindow").insertAdjacentHTML('beforeEnd', html);
     setTimeout(function () {
         document.getElementById('popup').remove();
-    }, 8000);
+    }, 10000);
 }
 
 /**

@@ -66,7 +66,7 @@ function insertTasktoMatrix() {
 
 function createFieldinList1(id) {
   m = 1;
-   
+
   let html =  generateListItem(
     m,
     allTasks[i].date,
@@ -79,7 +79,7 @@ function createFieldinList1(id) {
 
 function createFieldinList2(id) {
   m = 2;
-  
+
   let html =  generateListItem(
     m,
     allTasks[i].date,
@@ -92,7 +92,7 @@ function createFieldinList2(id) {
 
 function createFieldinList3(id) {
   m = 3;
-  
+
   let html =  generateListItem(
     m,
     allTasks[i].date,
@@ -105,7 +105,7 @@ function createFieldinList3(id) {
 
 function createFieldinList4(id) {
   m = 4;
-  
+
   let html =  generateListItem(
     m,
     allTasks[i].date,
