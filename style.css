@@ -17,7 +17,7 @@ h1 {
 }
 
 .button {
-    text-align: center;
+    padding-left: 10px;
     cursor: pointer;
     font-weight: 200;
     color: gray;
@@ -40,19 +40,42 @@ h1 {
     padding-top: 20px;
 }
 
-.btnAddTask {
-    padding-top: 70px;
+.btnMatrix, .btnAddTask, .btnList, .btnHelp, .btnDataprotection, .btnImprint {
+    position: absolute;
 }
 
-.btnMatrix, .btnList {
-    padding-top: 30px;
+.btnMatrix:hover, .btnAddTask:hover, .btnList:hover, .btnHelp:hover, .btnDataprotection:hover, .btnImprint:hover {
+    border-left: 5px solid grey;
+    color: grey;
+    font-weight: bold;
 }
 
-.btnHelp, .btnDataprotection, .btnImprint{
-    font-size: 15px;
-    padding-top: 30px;
+.btnAddTask{
+    top: 180px;
+}
+
+.btnMatrix{
+    top: 240px;
+}
+
+.btnList{
+    top:300px;
+
+}
+
+.btnHelp{
+    top:360px;
+
+}
+
+.btnImprint{
+    top:420px;
+}
 
 
+.btnDataprotection{
+
+    top: 480px;
 }
 
 .sidebar {
@@ -409,7 +432,7 @@ p {
     display: block;
 }
 
-.overlay-menu a:hover{
+.overlay-menu a:hover {
     color: rgba(141, 141, 141, 0.301);
 }
 
