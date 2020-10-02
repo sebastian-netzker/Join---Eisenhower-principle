@@ -91,16 +91,16 @@ function loadTasks() {
   }
   
   /**
-   * Loads a JSON or JSON Array to the Server
-   * payload {JSON | Array} - The payload you want to store
-   */
-  function loadJSONFromServer() {
+ * Loads a JSON or JSON Array to the Server
+ * payload {JSON | Array} - The payload you want to store
+ */
+function loadJSONFromServer() {
     return new Promise(function (resolve, reject) {
         let xhttp = new XMLHttpRequest();
-        let proxy = 'https://cors-anywhere.herokuapp.com/';
+        let proxy = determineProxySettings();
         let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
         xhttp.open('GET', serverURL);
-  
+
         xhttp.onreadystatechange = function (oEvent) {
             if (xhttp.readyState === 4) {
                 if (xhttp.status >= 200 && xhttp.status <= 399) {
@@ -110,13 +110,21 @@ function loadTasks() {
                 }
             }
         };
-  
+
         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xhttp.send();
-  
+
     });
-  }
-  
+}
+
+function determineProxySettings() {
+    if (window.location.href.indexOf('.developerakademie.com') > -1) {
+        return '';
+    } else {
+        return 'https://cors-anywhere.herokuapp.com/';
+    }
+}
+
   function showMyJSON() {
     console.log("This is allTasks", allTasks);
   }
