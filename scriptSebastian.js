@@ -24,7 +24,7 @@ function closeMenu() {
  * This function decided wehere the field is added
  */
 
-function insertTasktoMatrix() {
+setTimeout(function insertTasktoMatrix() {
   list1 = document.getElementById("list-important-urgent");
   list2 = document.getElementById("list-important-noturgent");
   list3 = document.getElementById("list-notimportant-urgent");
@@ -58,7 +58,7 @@ function insertTasktoMatrix() {
       createFieldinList4(i);
     }
   }
-}
+}, 3000);
 
 /**
  * This function create fields for the matrix 
