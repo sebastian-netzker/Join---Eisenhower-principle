@@ -146,7 +146,7 @@ function load() {
 function loadJSONFromServer() {
     return new Promise(function (resolve, reject) {
         let xhttp = new XMLHttpRequest();
-        let proxy = 'https://cors-anywhere.herokuapp.com/';
+        let proxy = determineProxySettings();
         let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
         xhttp.open('GET', serverURL);
 
@@ -164,6 +164,14 @@ function loadJSONFromServer() {
         xhttp.send();
 
     });
+}
+
+function determineProxySettings() {
+    if (window.location.href.indexOf('.developerakademie.com') > -1) {
+        return '';
+    } else {
+        return 'https://cors-anywhere.herokuapp.com/';
+    }
 }
 
 function showMyJSON() {
