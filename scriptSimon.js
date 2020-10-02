@@ -169,3 +169,22 @@ function loadJSONFromServer() {
 function showMyJSON() {
     console.log("This is allTasks", allTasks);
 }
+
+/**
+ * This function open the responsive Menu 
+ */
+
+
+function showMenu(){
+
+    document.getElementById("overlay-menu").classList.add("show-overlay-menu");
+  }
+
+/**
+ * This function close the responsive menu 
+ */
+
+function closeMenu() {
+
+    document.getElementById("overlay-menu").classList.remove("show-overlay-menu");
+  }
