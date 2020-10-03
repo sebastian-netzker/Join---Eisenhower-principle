@@ -161,7 +161,7 @@ h2 {
     line-height: unset;
 }
 
-.impressum{
+.impressum {
     padding: 24px;
 }
 
@@ -449,11 +449,9 @@ p {
     right: 0px;
 }
 
-.closeMenu-x:hover{
+.closeMenu-x:hover {
     color: white;
     font-weight: normal;
-
-
 }
 
 .date-cont {
@@ -519,6 +517,15 @@ p {
     overflow-y: scroll;
 }
 
+.imageProperties, .imagePropertiesList, .imagePropertiesMarix {
+    width: 800px;
+    height: 450px;
+}
+
+.ClassHelp {
+    margin: 15px;
+}
+
 /*responsive*/
 
 @media(max-width:1110px) {
@@ -527,6 +534,26 @@ p {
     }
     .h2-urgent {
         padding-left: 230px;
+    }
+    .imageProperties {
+        width: 700px;
+        height: 370px;
+    }
+    .helpClass {
+        font-size: 13px;
+        margin: 20px;
+    }
+    .imagePropertiesMarix {
+        width: 700px;
+        height: 370px;
+    }
+    .imagePropertiesList {
+        width: 700px;
+        height: 370px;
+    }
+    .helpClass {
+        font-size: 15px;
+        margin: 20px;
     }
 }
 
@@ -542,6 +569,22 @@ p {
     }
     .title, .dateClass, .status, .description {
         font-size: 15px;
+    }
+    .imageProperties {
+        width: 700px;
+        height: 370px;
+    }
+    .helpClass {
+        font-size: 13px;
+        margin: 20px;
+    }
+    .imagePropertiesMarix {
+        width: 700px;
+        height: 370px;
+    }
+    .imagePropertiesList {
+        width: 700px;
+        height: 370px;
     }
 }
 
@@ -707,6 +750,22 @@ p {
         font-size: 15px;
         font-weight: bold;
     }
+    .imageProperties {
+        width: 700px;
+        height: 370px;
+    }
+    .helpClass {
+        font-size: 13px;
+        margin: 20px;
+    }
+    .imagePropertiesMarix {
+        width: 700px;
+        height: 370px;
+    }
+    .imagePropertiesList {
+        width: 700px;
+        height: 370px;
+    }
 }
 
 @media(min-device-width: 451px) and (max-device-width: 899px) {
@@ -792,6 +851,22 @@ p {
     .buttonPosition {
         top: 10px
     }
+    .imageProperties {
+        width: 420px;
+        height: 230px;
+    }
+    .helpClass {
+        font-size: 13px;
+        margin: 20px;
+    }
+    .imagePropertiesMarix {
+        width: 420px;
+        height: 230px;
+    }
+    .imagePropertiesList {
+        width: 420px;
+        height: 230px;
+    }
 }
 
 @media(max-width:450px) {
@@ -843,5 +918,21 @@ p {
     .title {
         font-size: 14px;
         font-weight: bold;
+    }
+    .imageProperties {
+        width: 360px;
+        height: 200px;
+    }
+    .helpClass {
+        font-size: 13px;
+        margin: 20px;
+    }
+    .imagePropertiesMarix {
+        width: 360px;
+        height: 200px;
+    }
+    .imagePropertiesList {
+        width: 360px;
+        height: 200px;
     }
 }
