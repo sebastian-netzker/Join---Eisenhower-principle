@@ -417,7 +417,7 @@ p {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(145, 164, 248, 1);
+    background-color: rgba(0, 0, 0, 0.7);
     transform: translateX(100%);
     transition: all 225ms ease-in-out;
 }
@@ -891,7 +891,7 @@ p {
         top: 590px;
     }
     .mainWindow-matrix {
-        height: 90vh;
+        height: 100vh;
     }
     .overlay-menu a {
         font-size: 30px;
