@@ -498,10 +498,6 @@ p {
     width: 30%;
 }
 
-.taskListCont {
-    overflow-y: scroll;
-}
-
 .help-body {
     margin: 30px;
     background-color: rgb(252, 252, 252);
@@ -513,10 +509,6 @@ p {
     color: black;
 }
 
-.help-cont {
-    overflow-y: scroll;
-}
-
 .imageProperties, .imagePropertiesList, .imagePropertiesMarix {
     width: 800px;
     height: 450px;
@@ -524,6 +516,10 @@ p {
 
 .ClassHelp {
     margin: 15px;
+}
+
+.taskListCont {
+    overflow-y: scroll;
 }
 
 /*responsive*/
@@ -851,6 +847,9 @@ p {
     .buttonPosition {
         top: 10px
     }
+}
+
+@media(max-width:760px) {
     .imageProperties {
         width: 420px;
         height: 230px;
@@ -860,12 +859,12 @@ p {
         margin: 20px;
     }
     .imagePropertiesMarix {
-        width: 420px;
-        height: 230px;
+        width: 400px !important;
+        height: 250px !important;
     }
     .imagePropertiesList {
-        width: 420px;
-        height: 230px;
+        width: 400px !important;
+        height: 250px !important;
     }
 }
 
