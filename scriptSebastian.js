@@ -3,6 +3,22 @@ let i;
 let allTasks = [];
 const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
 
+
+
+
+function openpopupMatrix() {
+
+  document.getElementById("popup-matrix").classList.remove("d-none");
+
+}
+
+function closepopupMatrix() {
+  document.getElementById("popup-matrix").classList.add("d-none");
+}
+
+
+
+
 /**
  * This function open the responsive Menu 
  */
@@ -130,7 +146,7 @@ function createFieldinList4(id) {
  */
 function generateListItem(m, date, title, description, id) {
  let k = 1;
- let html = `<li id="li-${k}" class="li-${m}">
+ let html = `<li onclick="openpopupMatrix()" id="li-${k}" class="li-${m}">
       <img onclick="deleteTask(${id})" class="garbage_can" src="img/garbage_can.png">
       <span class="date">${date}</span> <br> 
       <span class="title">${title}</span> <br> 

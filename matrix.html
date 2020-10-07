@@ -19,6 +19,29 @@
 </head>
 
 <body onload="loadTasks()">
+
+    <div id="popup-matrix" class="popup-matrix d-none">
+        <div class="popup-content">
+            <span onclick="closepopupMatrix()" class="popup-close">&times;</span>
+            <div class="popup-body">
+
+                <h4 class="h4-popup">Current Category : important - urgent</h4>
+
+               <p class="p-popup">Exchange task to another category</p>
+
+
+                <button type="button" class="btn btn-light">important - not urgent</button> <br>
+                <button type="button" class="btn btn-light">not important - urgent</button> <br>
+               <button type="button" class="btn btn-light">not important - not urgent</button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
     <div class="sidebar" id="sidebar">
 
         <img class="joinlogo" src="img/joinlogo.png" alt="">
