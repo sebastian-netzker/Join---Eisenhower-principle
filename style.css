@@ -109,7 +109,7 @@ h1 {
 
 .mainWindow {
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100% - 104px);
     background-color: white;
     margin-top: 8px;
     margin-right: 0;
@@ -518,7 +518,7 @@ p {
     margin: 15px;
 }
 
-.taskListCont {
+.help-cont {
     overflow-y: scroll;
 }
 
@@ -859,12 +859,12 @@ p {
         margin: 20px;
     }
     .imagePropertiesMarix {
-        width: 400px !important;
-        height: 250px !important;
+        width: 400px;
+        height: 250px;
     }
     .imagePropertiesList {
-        width: 400px !important;
-        height: 250px !important;
+        width: 400px;
+        height: 250px;
     }
 }
 
@@ -933,5 +933,24 @@ p {
     .imagePropertiesList {
         width: 360px;
         height: 200px;
+    }
+}
+
+@media(max-width:400px) {
+    .imageProperties {
+        width: 230px;
+        height: 150px;
+    }
+    .helpClass {
+        font-size: 13px;
+        margin: 20px;
+    }
+    .imagePropertiesMarix {
+        width: 230px;
+        height: 150px;
+    }
+    .imagePropertiesList {
+        width: 230px;
+        height: 150px;
     }
 }
