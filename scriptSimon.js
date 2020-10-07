@@ -66,7 +66,7 @@ function addTask() {
 function saveJSONToServer(payload) {
     return new Promise(function (resolve, reject) {
         let xhttp = new XMLHttpRequest();
-        let serverURL = BASE_SERVER_URL + 'save_json.php';
+        let serverURL = BASE_SERVER_URL + 'save_json.php?';
         xhttp.open('POST', serverURL); // POST = Erstellen; GET = Abrufen; DELETE = Löschen, PUT = Updaten
 
         xhttp.onreadystatechange = function (oEvent) {
@@ -85,6 +85,7 @@ function saveJSONToServer(payload) {
         };
 
         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhttp.setRequestHeader("Cache-Control", "no-cache");
         xhttp.send(JSON.stringify(payload));
 
     });
@@ -161,6 +162,7 @@ function loadJSONFromServer() {
         };
 
         xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        xhttp.setRequestHeader("Cache-Control", "no-cache");
         xhttp.send();
 
     });
