@@ -23,26 +23,23 @@
       <div class="popup-content" id="popup-content">
         <span onclick="closepopupMatrix()" class="popup-close">&times;</span>
         <div class="popup-body">
-          <h4 class="h4-popup">Category : important - urgent</h4>
+          <h4 class="h4-popup">Task title : <p id="p-popup"></p> </h4>
+           
+           <div id="line"><hr /></div>
 
-      
+          <div class="form-group">
+                    <label for="exampleFormControlSelect1">
+                        <h3>Category</h3>
+                    </label>
+                    <select class="form-control" id="urgency">
+                        <option>important - urgent</option>
+                        <option>important - not urgent</option>
+                        <option > not important - urgent</option>
+                        <option> not important - not urgent</option>
+                    </select>
+                  </div>
 
-          <nav>
-            <div class="dropdown">
-              <div class="category">
-                <button>Category</button>
-                <ul>
-                  <li><a href="#">important - urgent</a></li>
-                  <li><a href="#">important - not urgent</a></li>
-                  <li><a href="#">not important - urgent</a></li>
-                  <li><a href="#"> not important not urgent</a></li>
-                </ul>
-              </div>
-              <button type="button" class="btn btn-success">Submit</button>
-            </div>
-          </nav>
-
-          
+          <button type="button" class="btn btn-success">Submit</button>
         </div>
       </div>
     </div>
