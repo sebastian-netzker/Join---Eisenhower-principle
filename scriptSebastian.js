@@ -8,8 +8,8 @@ const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
 
 function openpopupMatrix() {
 
-  document.getElementById("popup-matrix").classList.remove("d-none");
 
+  document.getElementById("popup-matrix").classList.remove("d-none");
 }
 
 function closepopupMatrix() {
