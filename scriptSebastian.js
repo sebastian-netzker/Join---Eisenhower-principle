@@ -6,10 +6,40 @@ const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
 
 
 
-function openpopupMatrix() {
+function openpopupMatrix(i) {
 
+  let task = allTasks[i];
 
   document.getElementById("popup-matrix").classList.remove("d-none");
+
+  document.getElementById("popup-title").innerHTML = task.title;
+
+    if (
+      allTasks[i].importance == "High Importance" &&
+      allTasks[i].urgency == "High Urgency"
+    ) {
+
+      document.getElementById("option-1").setAttribute("selected", "selected");
+      
+    } else if (
+      allTasks[i].importance == "High Importance" &&
+      allTasks[i].urgency == "Low Urgency"
+    ) {
+      document.getElementById("option-2").setAttribute("selected", "selected");
+      
+    } else if (
+      allTasks[i].importance == "Low Importance" &&
+      allTasks[i].urgency == "High Urgency"
+    ) {
+      document.getElementById("option-3").setAttribute("selected", "selected");
+      
+    } else if (
+      allTasks[i].importance == "Low Importance" &&
+      allTasks[i].urgency == "Low Urgency"
+    ) {
+      document.getElementById("option-4").setAttribute("selected", "selected");
+      
+    }
 }
 
 function closepopupMatrix() {
@@ -146,10 +176,10 @@ function createFieldinList4(id) {
  */
 function generateListItem(m, date, title, description, id) {
  let k = 1;
- let html = `<li onclick="openpopupMatrix()" id="li-${k}" class="li-${m}">
+ let html = `<li onclick="openpopupMatrix(${i})" id="li-${k}" class="li-${m}">
       <img onclick="deleteTask(${id})" class="garbage_can" src="img/garbage_can.png">
       <span class="date">${date}</span> <br> 
-      <span class="title">${title}</span> <br> 
+      <span id="title-${id}" class="title">${title}</span> <br> 
       <span class="description">${description}</span>
     </li>`;
 

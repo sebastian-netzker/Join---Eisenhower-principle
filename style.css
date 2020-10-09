@@ -591,6 +591,7 @@ p {
     text-align: left;
     color: black;
     margin-top: -20px;
+    display: flex;
 }
 
 .btn-light:hover {
@@ -604,6 +605,11 @@ hr {
     height: 1px;
     margin: 10px -45px 10px -30px;
     border: 0;
+}
+
+.p-popup {
+    position: relative;
+    left: 10px;
 }
 
 /*responsive*/
