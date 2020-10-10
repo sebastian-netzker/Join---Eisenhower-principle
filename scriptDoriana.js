@@ -3,7 +3,8 @@ let priorityStatus = "high";
 let status = 0;
 
 let allTasks = [];
-const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
+const BASE_SERVER_URL =
+  'http://simon-besendorfer.developerakademie.com/php/';
 
 /**
  * Creates item to the List, by every call of the function addTask()
@@ -17,7 +18,6 @@ const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
 function createItemsToTheList(title, priorityStatus, discription, i, date) {
     let item = `
         <li class="item" id="item${i}">
-
         <p class="dateClass">${date}</p>
         <p class="title"> ${title}</p>
         <p class="status"> ${priorityStatus}</p>

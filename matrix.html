@@ -1,119 +1,122 @@
 <html>
-
-<head>
+  <head>
     <title>Eisenhower - Matrix</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
 
     <script src="scriptSebastian.js?n=1"></script>
-    
 
-    
-      
-        
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width , initial-scale=1.0">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width , initial-scale=1.0" />
+  </head>
 
-<body onload="loadTasks()">
+  <body onload="loadTasks()">
+    <div id="popup-matrix" class="popup-matrix d-none">
+      <div class="popup-content" id="popup-content">
+        <span onclick="closepopupMatrix()" class="popup-close">&times;</span>
+        <div class="popup-body">
+          <h4 class="h4-popup">Task title : <p class="p-popup" id="popup-title"></p> </h4>
+           
+           <div id="line"><hr /></div>
+
+          <div class="form-group">
+                    <label for="exampleFormControlSelect1">
+                        <h3>Category</h3>
+                    </label>
+                    <select class="form-control" id="urgency">
+                        <option id="option-1" >important - urgent</option>
+                        <option id="option-2">important - not urgent</option>
+                        <option id="option-3"> not important - urgent</option>
+                        <option id="option-4"> not important - not urgent</option>
+                    </select>
+                  </div>
+
+          <button type="button" class="btn btn-success">Submit</button>
+        </div>
+      </div>
+    </div>
+
     <div class="sidebar" id="sidebar">
-
-        <img class="joinlogo" src="img/joinlogo.png" alt="">
-        <a href="index.html"><h2 class="button btnAddTask" id="btnAddTask">Add Task</h2></a>
-        <a href="matrix.html"><h2 class="button btnMatrix"  id="btnMatrix">Matrix</h2></a>
-        <a href="list.html"><h2 class="button btnList" id="btnList">List</h2></a>
-        <a href="help.html">
-            <h2 class="button btnHelp" id="btnHelp">Help</h2>
-        </a>
-        <a href="imprint.html">
-            <h2 class="button btnImprint" id="btnImprint">Imprint</h2>
-        </a>
-        <a href="dataprotection.html">
-            <h2 class="button btnDataprotection" id="btnDataprotection">Dataprotection</h2>
-
-        </a>
+      <img class="joinlogo" src="img/joinlogo.png" alt="" />
+      <a href="index.html"
+        ><h2 class="button btnAddTask" id="btnAddTask">Add Task</h2></a
+      >
+      <a href="matrix.html"
+        ><h2 class="button btnMatrix" id="btnMatrix">Matrix</h2></a
+      >
+      <a href="list.html"><h2 class="button btnList" id="btnList">List</h2></a>
+      <a href="help.html">
+        <h2 class="button btnHelp" id="btnHelp">Help</h2>
+      </a>
+      <a href="imprint.html">
+        <h2 class="button btnImprint" id="btnImprint">Imprint</h2>
+      </a>
+      <a href="dataprotection.html">
+        <h2 class="button btnDataprotection" id="btnDataprotection">
+          Dataprotection
+        </h2>
+      </a>
     </div>
     <div class="row2">
-        <div class="head" id="head"> 
-            <h1 class="h1-Matrix">Eisenhower - Matrix</h1>
+      <div class="head" id="head">
+        <h1 class="h1-Matrix">Eisenhower - Matrix</h1>
 
-            <a onclick="showMenu()" href="#" class="burger-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
+        <a onclick="showMenu()" href="#" class="burger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
 
-            
-                <div id="overlay-menu" class="overlay-menu">
-                    <a  href="index.html">AddTask</a>
-                    <a  href="matrix.html">Matrix</a>
-                    <a  href="list.html">List</a>
-                    <a  href="help.html">Help</a>
-                    <a  href="imprint.html">Imprint</a>
-                    <a  href="dataprotection.html">Dataprotection</a>
+        <div id="overlay-menu" class="overlay-menu">
+          <a href="index.html">AddTask</a>
+          <a href="matrix.html">Matrix</a>
+          <a href="list.html">List</a>
+          <a href="help.html">Help</a>
+          <a href="imprint.html">Imprint</a>
+          <a href="dataprotection.html">Dataprotection</a>
 
+          <a
+            onclick="closeMenu()"
+            href="#"
+            class="burger-menu closing-burger-menu"
+          >
+            <span class="closeMenu-X">X</span>
+          </a>
+        </div>
+      </div>
+      <!--for inserting the selected Title use h1-->
+      <div class="mainWindow mainWindow-matrix" id="mainWindow">
+        <div class="urgency">
+          <h2 class="h2-urgent">urgent</h2>
+          <h2 class="h2-noturgent">not urgent</h2>
+        </div>
 
-                     <a onclick="closeMenu()" href="#" class="burger-menu closing-burger-menu">
-                  <span class="closeMenu-X">X</span>
-                  </a>
-                </div>
-            
+        <div class="importance">
+          <h2 class="h2-important">important</h2>
+          <h2 class="h2-notimportant">not important</h2>
+        </div>
 
-            
-        
-        </div><!--for inserting the selected Title use h1-->
-        <div class="mainWindow mainWindow-matrix" id="mainWindow">
-
-            <div class="urgency">
-
-            <h2 class="h2-urgent">urgent</h2>
-            <h2 class="h2-noturgent">not urgent</h2></div>
-
-            <div class="importance">
-            <h2 class="h2-important">important</h2>
-            <h2 class="h2-notimportant">not important</h2></div>
-
-            <div class="important-urgent">
-                <ul id="list-important-urgent">
-
-                    
-
-                </ul>
-            </div>
-            <div class="important-noturgent">
-                <ul id="list-important-noturgent">
-
-                    
-
-                </ul>
-            </div>
-            <div class="notimportant-urgent">
-                <ul id="list-notimportant-urgent">
-
-                   
-
-                </ul>
-            </div>
-            <div class="notimportant-noturgent">
-                <ul id="list-notimportant-noturgent">
-
-    
-
-                </ul>
-            </div>
-       
-
-
-        </div>   
-        
-
-        
+        <div class="important-urgent">
+          <ul id="list-important-urgent"></ul>
+        </div>
+        <div class="important-noturgent">
+          <ul id="list-important-noturgent"></ul>
+        </div>
+        <div class="notimportant-urgent">
+          <ul id="list-notimportant-urgent"></ul>
+        </div>
+        <div class="notimportant-noturgent">
+          <ul id="list-notimportant-noturgent"></ul>
+        </div>
+      </div>
     </div>
-
-    
-</body>
-
+  </body>
 </html>
