@@ -4,7 +4,7 @@ let status = 0;
 
 let allTasks = [];
 const BASE_SERVER_URL =
-  'http://simon-besendorfer.developerakademie.com/php/';
+    'http://simon-besendorfer.developerakademie.com/php/';
 
 /**
  * Creates item to the List, by every call of the function addTask()
@@ -22,7 +22,7 @@ function createItemsToTheList(title, priorityStatus, discription, i, date) {
         <p class="title"> ${title}</p>
         <p class="status"> ${priorityStatus}</p>
         <p class="description"> ${discription}</p>
-        <button onclick="deleteItemList(${i})"class="delete">Delete Task</button>
+        <button onclick="questionUserAgain(${i})"class="delete">Delete Task</button>
         </li>
          `;
 
@@ -52,11 +52,29 @@ function insertItemsOnTheList() {
         document.getElementById('item' + i).style.borderLeft = "5px solid " + colorCode;
     }
 }
+
+function questionUserAgain(id) {
+    let questionAgain = `
+    <div id="questionAgainId" class="questionAgainClass">
+    <div class="questionAgain" 
+     <span>Are you sure you want to delete the Task: ${allTasks[id].title}?</span>
+    </div>
+    <div class="answer">
+    <span onclick="answerDeleteItemList(${id})"class="answerYes">Yes</span>
+    <span onclick="answerDoNotDelete()"class="answerNo">No</span>
+    </div>
+    </div>
+    `;
+    let question = document.getElementById("questionAgain").insertAdjacentHTML("beforeend", questionAgain);
+
+
+
+}
+
 /**
  * Delete a specified task:it will be the id saved ,then the item will be removed from HTML and from the array allTasks a task is deleted
  */
-function deleteItemList(id) {
-
+function answerDeleteItemList(id) {
 
     let item = document.getElementById('item' + id);
     item.parentNode.removeChild(item);
@@ -70,7 +88,13 @@ function deleteItemList(id) {
         .catch(function (error) { // Fehler
             console.error('Fehler beim laden!', error);
         });
+    let itemWindow = document.getElementById("questionAgainId");
+    itemWindow.parentNode.removeChild(itemWindow);
+}
 
+function answerDoNotDelete() {
+    let itemWindow = document.getElementById("questionAgainId");
+    itemWindow.parentNode.removeChild(itemWindow);
 }
 
 /**

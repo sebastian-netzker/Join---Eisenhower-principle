@@ -612,6 +612,39 @@ hr {
     left: 10px;
 }
 
+.questionAgainListHtml {
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    right: 30%;
+}
+
+.questionAgain {
+    border: none;
+    background-color: rgb(255, 190, 190);
+    color: black;
+    border-radius: 10px;
+    padding: 13px;
+    text-align: center;
+}
+
+.answer {
+    margin: 20px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.answerYes, .answerNo {
+    border: none;
+    background: rgb(235, 235, 235);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: black;
+    margin-right: 10px;
+}
+
 /*responsive*/
 
 @media(max-width:1110px) {
@@ -937,6 +970,12 @@ hr {
     .buttonPosition {
         top: 10px
     }
+    .questionAgainListHtml {
+        font-size: 15px;
+    }
+    .date-cont {
+        font-size: 17px;
+    }
 }
 
 @media(max-width:760px) {
@@ -1042,5 +1081,13 @@ hr {
     .imagePropertiesList {
         width: 230px;
         height: 150px;
+    }
+    .questionAgainListHtml {
+        left: 30%;
+        right: 20%;
+        font-size: 13px;
+    }
+    .sortText {
+        width: 90%;
     }
 }
