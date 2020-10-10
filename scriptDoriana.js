@@ -4,7 +4,7 @@ let status = 0;
 
 let allTasks = [];
 const BASE_SERVER_URL =
-    'http://simon-besendorfer.developerakademie.com/php/';
+  "http://sebastian-netzker.developerakademie.com/Gruppenarbeit/php/";
 
 /**
  * Creates item to the List, by every call of the function addTask()
