@@ -1,5 +1,6 @@
 let allTasks = [];
-const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
+const BASE_SERVER_URL =
+  "http://sebastian-netzker.developerakademie.com/Gruppenarbeit/php/";
 /**
  * This function will empty all entries in the add Task form. The previous added Information will not be changed
  */

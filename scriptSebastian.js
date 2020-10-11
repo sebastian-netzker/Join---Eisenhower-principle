@@ -1,18 +1,27 @@
-
-let i;
+let n;
 let allTasks = [];
-const BASE_SERVER_URL = 'http://simon-besendorfer.developerakademie.com/php/';
+const BASE_SERVER_URL = 'http://sebastian-netzker.developerakademie.com/Gruppenarbeit/php/';
 
 
-
+/**
+ * This function open the Popupmenu from the matrix
+ */
 
 function openpopupMatrix(i) {
+
+  document.getElementById("option-1").removeAttribute("selected", "selected");
+
+  document.getElementById("option-2").removeAttribute("selected", "selected");
+
+  document.getElementById("option-3").removeAttribute("selected", "selected");
+
+  document.getElementById("option-4").removeAttribute("selected", "selected");
 
   let task = allTasks[i];
 
   document.getElementById("popup-matrix").classList.remove("d-none");
 
-  document.getElementById("popup-title").innerHTML = task.title;
+  document.getElementById("popup-title").innerHTML = task.title;   
 
     if (
       allTasks[i].importance == "High Importance" &&
@@ -39,11 +48,37 @@ function openpopupMatrix(i) {
     ) {
       document.getElementById("option-4").setAttribute("selected", "selected");
       
-    }
+    } 
 }
+
+
+/**
+ * This function close the Popupmenu from the Matrix
+ */
 
 function closepopupMatrix() {
   document.getElementById("popup-matrix").classList.add("d-none");
+}
+
+
+function selector(){
+
+  
+    let select_Menu = document.getElementById("select-menu");
+    let selectedValue = select_Menu.options[select_Menu.selectedIndex].value;
+
+    
+    if (selectedValue == "important - not urgent") {
+      deleteTask(n);
+      closepopupMatrix();
+    } else if(selectedValue == "not important - urgent"){
+      deleteTask(n);
+      closepopupMatrix();
+    } else if(selectedValue == "not important - not urgent"){
+      deleteTask(n);
+      closepopupMatrix();
+    }
+
 }
 
 
