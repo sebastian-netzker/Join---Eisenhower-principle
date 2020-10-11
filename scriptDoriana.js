@@ -37,19 +37,23 @@ function insertItemsOnTheList() {
     for (let i = 0; i < allTasks.length; i++) {
         if (allTasks[i].importance == "High Importance" && allTasks[i].urgency == "High Urgency") {
             priorityStatus = "High";
-            colorCode = 'red';
+            colorCode = "rgb(255, 72, 0)";
         }
         else if (allTasks[i].importance == "Low Importance" && allTasks[i].urgency == "Low Urgency") {
             priorityStatus = "Low";
-            colorCode = 'yellow';
+            colorCode = "rgb(0, 132, 255)";
+        }
+        else if (allTasks[i].importance == "High Importance" && allTasks[i].urgency == "Low Urgency") {
+            priorityStatus = "Medium";
+            colorCode = "rgb(255, 196, 0)";
         }
         else {
             priorityStatus = "Medium";
-            colorCode = 'orange';
+            colorCode = "rgb(91, 212, 43)";
         }
         let insertItem = createItemsToTheList(allTasks[i].title, priorityStatus, allTasks[i].description, i, allTasks[i].date);
         document.getElementById('listItem1').insertAdjacentHTML('beforeend', insertItem);
-        document.getElementById('item' + i).style.borderLeft = "5px solid " + colorCode;
+        document.getElementById('item' + i).style.borderLeft = "8px solid " + colorCode;
     }
 }
 
