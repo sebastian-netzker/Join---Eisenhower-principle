@@ -68,21 +68,31 @@ function selector(i) {
 
   if (selectedValue == "important - not urgent") {
     task.importance = "High Importance";
-    task.urgency = "High Urgency";
+    task.urgency = "Low Urgency";
   } else if (selectedValue == "not important - urgent") {
-    //TODO
+  
+    task.importance = "Low Importance";
+    task.urgency = "High Urgency";
+
   } else if (selectedValue == "not important - not urgent") {
-    //TODO
-  } else {
-    //TODO
+
+     task.importance = "Low Importance";
+     task.urgency = "Low Urgency";
+
+  } else if(selectedValue == "important - urgent") {
+    
+    task.importance = "High Importance";
+    task.urgency = "High Urgency";
   }
 
   // 2)  save JSON to Server
   saveJSONToServer(allTasks)
   .then(function (result) {
     // TODO: Show loading screen
+   
     console.log("Laden erfolgreich!", result);
-    load();
+    load(); 
+    
   })
   .catch(function (error) {
     // Fehler
@@ -93,23 +103,7 @@ function selector(i) {
   // 3) Update HTML View
   insertTasktoMatrix();
 
-  // @Sebastian delete
-  /*for (i = 0; i < allTasks.length; i++) {
-    if (
-      allTasks[i].importance == "High Importance" &&
-      allTasks[i].urgency == "High Urgency"
-    ) {
-      if (selectedValue == "important - not urgent") {
-        createFieldinList1_2(i);
-      } else if (selectedValue == "not important - urgent") {
-        createFieldinList1_3(i);
-      } else if (selectedValue == "not important - not urgent") {
-        createFieldinList1_4(i);
-      }
-
-      closepopupMatrix();
-    }*/
-
+  closepopupMatrix();
 }
 
 /**
@@ -183,45 +177,6 @@ function createFieldinList1(id) {
     id
   );
   list1.insertAdjacentHTML("beforeend", html);
-}
-
-function createFieldinList1_2(id) {
-  m = 1;
-
-  html = generateListItem(
-    m,
-    allTasks[i].date,
-    allTasks[i].title,
-    allTasks[i].description,
-    id
-  );
-  list2.insertAdjacentHTML("beforeend", html);
-}
-
-function createFieldinList1_3(id) {
-  m = 1;
-
-  html = generateListItem(
-    m,
-    allTasks[i].date,
-    allTasks[i].title,
-    allTasks[i].description,
-    id
-  );
-  list3.insertAdjacentHTML("beforeend", html);
-}
-
-function createFieldinList1_4(id) {
-  m = 1;
-
-  html = generateListItem(
-    m,
-    allTasks[i].date,
-    allTasks[i].title,
-    allTasks[i].description,
-    id
-  );
-  list4.insertAdjacentHTML("beforeend", html);
 }
 
 
@@ -313,7 +268,16 @@ function deleteTask(n) {
  */
 function loadTasks() {
   load();
-  showMyJSON();
+  document.getElementById("spinner").classList.remove("d-none");
+   showMyJSON();
+
+   if (document.readyState === "complete") {
+
+    document.getElementById("spinner").classList.add("d-none");
+
+   }
+
+  
 }
 
 /**
@@ -338,6 +302,7 @@ function load() {
  * payload {JSON | Array} - The payload you want to store
  */
 function loadJSONFromServer() {
+  
   return new Promise(function (resolve, reject) {
     let xhttp = new XMLHttpRequest();
     let proxy = determineProxySettings();
@@ -357,6 +322,7 @@ function loadJSONFromServer() {
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send();
   });
+  
 }
 
 function determineProxySettings() {
