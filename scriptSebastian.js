@@ -1,14 +1,14 @@
 let n;
+let html;
 let allTasks = [];
-const BASE_SERVER_URL = 'http://sebastian-netzker.developerakademie.com/Gruppenarbeit/php/';
-
+const BASE_SERVER_URL =
+  "http://simon-besendorfer.developerakademie.com/php/";
 
 /**
  * This function open the Popupmenu from the matrix
  */
 
 function openpopupMatrix(i) {
-
   document.getElementById("option-1").removeAttribute("selected", "selected");
 
   document.getElementById("option-2").removeAttribute("selected", "selected");
@@ -21,36 +21,30 @@ function openpopupMatrix(i) {
 
   document.getElementById("popup-matrix").classList.remove("d-none");
 
-  document.getElementById("popup-title").innerHTML = task.title;   
+  document.getElementById("popup-title").innerHTML = task.title;
 
-    if (
-      allTasks[i].importance == "High Importance" &&
-      allTasks[i].urgency == "High Urgency"
-    ) {
-
-      document.getElementById("option-1").setAttribute("selected", "selected");
-      
-    } else if (
-      allTasks[i].importance == "High Importance" &&
-      allTasks[i].urgency == "Low Urgency"
-    ) {
-      document.getElementById("option-2").setAttribute("selected", "selected");
-      
-    } else if (
-      allTasks[i].importance == "Low Importance" &&
-      allTasks[i].urgency == "High Urgency"
-    ) {
-      document.getElementById("option-3").setAttribute("selected", "selected");
-      
-    } else if (
-      allTasks[i].importance == "Low Importance" &&
-      allTasks[i].urgency == "Low Urgency"
-    ) {
-      document.getElementById("option-4").setAttribute("selected", "selected");
-      
-    } 
+  if (
+    allTasks[i].importance == "High Importance" &&
+    allTasks[i].urgency == "High Urgency"
+  ) {
+    document.getElementById("option-1").setAttribute("selected", "selected");
+  } else if (
+    allTasks[i].importance == "High Importance" &&
+    allTasks[i].urgency == "Low Urgency"
+  ) {
+    document.getElementById("option-2").setAttribute("selected", "selected");
+  } else if (
+    allTasks[i].importance == "Low Importance" &&
+    allTasks[i].urgency == "High Urgency"
+  ) {
+    document.getElementById("option-3").setAttribute("selected", "selected");
+  } else if (
+    allTasks[i].importance == "Low Importance" &&
+    allTasks[i].urgency == "Low Urgency"
+  ) {
+    document.getElementById("option-4").setAttribute("selected", "selected");
+  }
 }
-
 
 /**
  * This function close the Popupmenu from the Matrix
@@ -60,46 +54,46 @@ function closepopupMatrix() {
   document.getElementById("popup-matrix").classList.add("d-none");
 }
 
-
-function selector(){
-
-  
-    let select_Menu = document.getElementById("select-menu");
-    let selectedValue = select_Menu.options[select_Menu.selectedIndex].value;
-
-    
-    if (selectedValue == "important - not urgent") {
-      deleteTask(n);
-      closepopupMatrix();
-    } else if(selectedValue == "not important - urgent"){
-      deleteTask(n);
-      closepopupMatrix();
-    } else if(selectedValue == "not important - not urgent"){
-      deleteTask(n);
-      closepopupMatrix();
-    }
-
-}
-
-
-
-
 /**
- * This function open the responsive Menu 
+ * This function choose where the task will be moved 
  */
 
+function selector() {
+  let select_Menu = document.getElementById("select-menu");
+  let selectedValue = select_Menu.options[select_Menu.selectedIndex].value;
 
-function showMenu(){
+  for (i = 0; i < allTasks.length; i++) {
+    if (
+      allTasks[i].importance == "High Importance" &&
+      allTasks[i].urgency == "High Urgency"
+    ) {
+      if (selectedValue == "important - not urgent") {
+         createFieldinList1_2(i);
+        closepopupMatrix();
+      } else if (selectedValue == "not important - urgent") {
+         createFieldinList1_3(i);
+        closepopupMatrix();
+      } else if (selectedValue == "not important - not urgent") {
+         createFieldinList1_4(i);
+        closepopupMatrix();
+      }
+    }
+  }
+}
 
+/**
+ * This function open the responsive Menu
+ */
+
+function showMenu() {
   document.getElementById("overlay-menu").classList.add("show-overlay-menu");
 }
 
 /**
- * This function close the responsive menu 
+ * This function close the responsive menu
  */
 
 function closeMenu() {
-
   document.getElementById("overlay-menu").classList.remove("show-overlay-menu");
 }
 
@@ -112,12 +106,12 @@ function insertTasktoMatrix() {
   list2 = document.getElementById("list-important-noturgent");
   list3 = document.getElementById("list-notimportant-urgent");
   list4 = document.getElementById("list-notimportant-noturgent");
-  list1.innerHTML = '';
-  list2.innerHTML = '';
-  list3.innerHTML = '';
-  list4.innerHTML = '';
+  list1.innerHTML = "";
+  list2.innerHTML = "";
+  list3.innerHTML = "";
+  list4.innerHTML = "";
 
-  console.log('allTasks', allTasks);
+  console.log("allTasks", allTasks);
   for (i = 0; i < allTasks.length; i++) {
     if (
       allTasks[i].importance == "High Importance" &&
@@ -144,13 +138,13 @@ function insertTasktoMatrix() {
 }
 
 /**
- * This function create fields for the matrix 
+ * This function create fields for the matrix
  */
 
 function createFieldinList1(id) {
   m = 1;
 
-  let html =  generateListItem(
+  html = generateListItem(
     m,
     allTasks[i].date,
     allTasks[i].title,
@@ -160,10 +154,54 @@ function createFieldinList1(id) {
   list1.insertAdjacentHTML("beforeend", html);
 }
 
+function createFieldinList1_2(id) {
+  m = 1;
+
+  html = generateListItem(
+    m,
+    allTasks[i].date,
+    allTasks[i].title,
+    allTasks[i].description,
+    id
+  );
+  list2.insertAdjacentHTML("beforeend", html);
+}
+
+function createFieldinList1_3(id) {
+  m = 1;
+
+  html = generateListItem(
+    m,
+    allTasks[i].date,
+    allTasks[i].title,
+    allTasks[i].description,
+    id
+  );
+  list3.insertAdjacentHTML("beforeend", html);
+}
+
+function createFieldinList1_4(id) {
+  m = 1;
+
+  html = generateListItem(
+    m,
+    allTasks[i].date,
+    allTasks[i].title,
+    allTasks[i].description,
+    id
+  );
+  list4.insertAdjacentHTML("beforeend", html);
+}
+
+
+
+
+
+
 function createFieldinList2(id) {
   m = 2;
 
-  let html =  generateListItem(
+  html = generateListItem(
     m,
     allTasks[i].date,
     allTasks[i].title,
@@ -176,7 +214,7 @@ function createFieldinList2(id) {
 function createFieldinList3(id) {
   m = 3;
 
-  let html =  generateListItem(
+  html = generateListItem(
     m,
     allTasks[i].date,
     allTasks[i].title,
@@ -189,7 +227,7 @@ function createFieldinList3(id) {
 function createFieldinList4(id) {
   m = 4;
 
-  let html =  generateListItem(
+  html = generateListItem(
     m,
     allTasks[i].date,
     allTasks[i].title,
@@ -199,9 +237,8 @@ function createFieldinList4(id) {
   list4.insertAdjacentHTML("beforeend", html);
 }
 
-
 /**
- * This function create automatically a list item 
+ * This function create automatically a list item
  * @param {number} m  - Parameter to create different classes
  * @param {number} k  - Parameter to create different id´s
  * @param {date} date - Date of the task
@@ -210,8 +247,8 @@ function createFieldinList4(id) {
  * @param {number} id - Parameter to change number in delete Task Function
  */
 function generateListItem(m, date, title, description, id) {
- let k = 1;
- let html = `<li onclick="openpopupMatrix(${i})" id="li-${k}" class="li-${m}">
+  let k = 1;
+  let html = `<li onclick="openpopupMatrix(${i})" id="li-${k}" class="li-${m}">
       <img onclick="deleteTask(${id})" class="garbage_can" src="img/garbage_can.png">
       <span class="date">${date}</span> <br> 
       <span id="title-${id}" class="title">${title}</span> <br> 
@@ -222,25 +259,25 @@ function generateListItem(m, date, title, description, id) {
   return html;
 }
 
-
 /**
- * This function delete a list item 
+ * This function delete a list item
  */
 
 function deleteTask(n) {
-
   allTasks.splice(n, 1);
   let allTasksAsString = JSON.stringify(allTasks);
   //localStorage.setItem('data', allTasksAsString);
   saveJSONToServer(allTasks)
-        .then(function (result) { //then(function (variable vom server))
-            console.log('Laden erfolgreich!', result);
-            load(); 
-        })
-        .catch(function (error) { // Fehler
-            console.error('Fehler beim laden!', error);
-        });
-    
+    .then(function (result) {
+      //then(function (variable vom server))
+      console.log("Laden erfolgreich!", result);
+      load();
+    })
+    .catch(function (error) {
+      // Fehler
+      console.error("Fehler beim laden!", error);
+    });
+
   insertTasktoMatrix();
 }
 
@@ -257,14 +294,16 @@ function loadTasks() {
  */
 function load() {
   loadJSONFromServer()
-      .then(function (result) { //then(function (variable vom server))
-          console.log('Laden erfolgreich!', result);
-          allTasks = JSON.parse(result);
-          insertTasktoMatrix();
-      })
-      .catch(function (error) { // Fehler
-          console.error('Fehler beim laden!', error);
-      });
+    .then(function (result) {
+      //then(function (variable vom server))
+      console.log("Laden erfolgreich!", result);
+      allTasks = JSON.parse(result);
+      insertTasktoMatrix();
+    })
+    .catch(function (error) {
+      // Fehler
+      console.error("Fehler beim laden!", error);
+    });
 }
 
 /**
@@ -273,32 +312,31 @@ function load() {
  */
 function loadJSONFromServer() {
   return new Promise(function (resolve, reject) {
-      let xhttp = new XMLHttpRequest();
-      let proxy = determineProxySettings();
-      let serverURL = proxy + BASE_SERVER_URL + 'my_json.json';
-      xhttp.open('GET', serverURL);
+    let xhttp = new XMLHttpRequest();
+    let proxy = determineProxySettings();
+    let serverURL = proxy + BASE_SERVER_URL + "my_json.json";
+    xhttp.open("GET", serverURL);
 
-      xhttp.onreadystatechange = function (oEvent) {
-          if (xhttp.readyState === 4) {
-              if (xhttp.status >= 200 && xhttp.status <= 399) {
-                  resolve(xhttp.responseText);
-              } else {
-                  reject(xhttp.statusText);
-              }
-          }
-      };
+    xhttp.onreadystatechange = function (oEvent) {
+      if (xhttp.readyState === 4) {
+        if (xhttp.status >= 200 && xhttp.status <= 399) {
+          resolve(xhttp.responseText);
+        } else {
+          reject(xhttp.statusText);
+        }
+      }
+    };
 
-      xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      xhttp.send();
-
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhttp.send();
   });
 }
 
 function determineProxySettings() {
-  if (window.location.href.indexOf('.developerakademie.com') > -1) {
-      return '';
+  if (window.location.href.indexOf(".developerakademie.com") > -1) {
+    return "";
   } else {
-      return 'https://cors-anywhere.herokuapp.com/';
+    return "https://cors-anywhere.herokuapp.com/";
   }
 }
 
@@ -312,27 +350,29 @@ function showMyJSON() {
  */
 function saveJSONToServer(payload) {
   return new Promise(function (resolve, reject) {
-      let xhttp = new XMLHttpRequest();
-      let serverURL = BASE_SERVER_URL + 'save_json.php';
-      xhttp.open('POST', serverURL); // POST = Erstellen; GET = Abrufen; DELETE = Löschen, PUT = Updaten
+    let xhttp = new XMLHttpRequest();
+    let serverURL = BASE_SERVER_URL + "save_json.php";
+    xhttp.open("POST", serverURL); // POST = Erstellen; GET = Abrufen; DELETE = Löschen, PUT = Updaten
 
-      xhttp.onreadystatechange = function (oEvent) {
-          if (xhttp.readyState === 4) { // Nr. 4 bedeutet, dass der Server eine Antwort gesendet hat
-              // Eine Antwort hat 2 Teile: a) Statuscode; b) payload
-              // 404 = Nicht gefunden
-              // 200 = Alles OK
-              // 202 = Datei erstellt
+    xhttp.onreadystatechange = function (oEvent) {
+      if (xhttp.readyState === 4) {
+        // Nr. 4 bedeutet, dass der Server eine Antwort gesendet hat
+        // Eine Antwort hat 2 Teile: a) Statuscode; b) payload
+        // 404 = Nicht gefunden
+        // 200 = Alles OK
+        // 202 = Datei erstellt
 
-              if (xhttp.status >= 200 && xhttp.status <= 399) { // Alles super, es hat funktioniert!
-                  resolve(xhttp.responseText);
-              } else { // Ein Fehler ist aufgetreten
-                  reject(xhttp.statusText);
-              }
-          }
-      };
+        if (xhttp.status >= 200 && xhttp.status <= 399) {
+          // Alles super, es hat funktioniert!
+          resolve(xhttp.responseText);
+        } else {
+          // Ein Fehler ist aufgetreten
+          reject(xhttp.statusText);
+        }
+      }
+    };
 
-      xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      xhttp.send(JSON.stringify(payload));
-
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhttp.send(JSON.stringify(payload));
   });
 }

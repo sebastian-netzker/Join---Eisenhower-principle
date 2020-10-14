@@ -460,25 +460,23 @@ p {
 }
 
 .date-cont {
-    width: 10%;
     color: grey;
 }
 
 .name-cont {
-    width: 17%;
     font-size: 17px;
     color: grey;
+    margin-left: -30%;
 }
 
 .sort-cont {
-    width: 46%;
     font-size: 17px;
     color: grey;
+    margin-left: -20%;
 }
 
 .details {
     text-align: end;
-    width: 10%;
     font-size: 17px;
     color: grey;
 }
@@ -637,11 +635,11 @@ hr {
 
 .answerYes, .answerNo {
     border: none;
-    background: rgb(235, 235, 235);
+    background-color: darkred;
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-    color: black;
+    color: white;
     margin-right: 10px;
 }
 
@@ -674,6 +672,15 @@ hr {
         font-size: 15px;
         margin: 20px;
     }
+    .date-cont {
+        font-size: 18px;
+    }
+    .name-cont {
+        margin-left: -30%;
+    }
+    .sort-cont {
+        margin-left: -25%;
+    }
 }
 
 @media(max-width:1000px) {
@@ -704,6 +711,12 @@ hr {
     .imagePropertiesList {
         width: 700px;
         height: 370px;
+    }
+    .name-cont {
+        margin-left: -25%;
+    }
+    .sort-cont {
+        margin-left: -20%;
     }
 }
 
@@ -840,7 +853,6 @@ hr {
         visibility: visible;
     }
     .item {
-        flex-direction: column;
         align-items: flex-start;
     }
     p {
@@ -884,6 +896,19 @@ hr {
     .imagePropertiesList {
         width: 700px;
         height: 370px;
+    }
+    .status {
+        width: 80%;
+        margin-left: 14px;
+    }
+    .date-cont {
+        margin-left: -55px;
+    }
+    .name-cont {
+        margin-left: -5%;
+    }
+    .sort-cont {
+        margin-left: -10%;
     }
 }
 
@@ -976,6 +1001,10 @@ hr {
     .date-cont {
         font-size: 17px;
     }
+    .status {
+        width: 80%;
+        margin-left: 14px;
+    }
 }
 
 @media(max-width:760px) {
@@ -994,6 +1023,13 @@ hr {
     .imagePropertiesList {
         width: 400px;
         height: 250px;
+    }
+    .status {
+        width: 80%;
+        margin-left: 14px;
+    }
+    .date-cont {
+        margin-left: -2%;
     }
 }
 
@@ -1024,9 +1060,6 @@ hr {
     .overlay-menu a {
         font-size: 30px;
         padding-bottom: 80px;
-    }
-    .date-cont {
-        font-size: 17px;
     }
     .dateClass {
         width: 100%;
@@ -1063,6 +1096,12 @@ hr {
         width: 360px;
         height: 200px;
     }
+    .status {
+        margin-left: 7px;
+    }
+    .date-cont {
+        font-size: 18px;
+    }
 }
 
 @media(max-width:400px) {
@@ -1089,5 +1128,11 @@ hr {
     }
     .sortText {
         width: 90%;
+    }
+    .status {
+        margin-left: 0px;
+    }
+    .date-cont {
+        font-size: 18px;
     }
 }
