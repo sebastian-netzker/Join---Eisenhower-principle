@@ -194,10 +194,6 @@ function createFieldinList1_4(id) {
 }
 
 
-
-
-
-
 function createFieldinList2(id) {
   m = 2;
 
