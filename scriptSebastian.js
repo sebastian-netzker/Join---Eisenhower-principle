@@ -6,8 +6,8 @@ const BASE_SERVER_URL =
 
 /**
  * This function open the Popupmenu from the matrix
+ * @param {integer} i - id of the task that should be updated
  */
-
 function openpopupMatrix(i) {
   document.getElementById("option-1").removeAttribute("selected", "selected");
 
@@ -20,6 +20,7 @@ function openpopupMatrix(i) {
   let task = allTasks[i];
 
   document.getElementById("popup-matrix").classList.remove("d-none");
+  document.getElementById("updateTaskButton").setAttribute('onclick', 'selector(' + i + ')');
 
   document.getElementById("popup-title").innerHTML = task.title;
 
@@ -54,31 +55,61 @@ function closepopupMatrix() {
   document.getElementById("popup-matrix").classList.add("d-none");
 }
 
-/**
- * This function choose where the task will be moved 
- */
 
-function selector() {
+/**
+ *  This function choose where the task will be moved 
+ * @param {integer} i - ID of the task that should be updated 
+ */
+function selector(i) {
+  let task = allTasks[i];
+
   let select_Menu = document.getElementById("select-menu");
   let selectedValue = select_Menu.options[select_Menu.selectedIndex].value;
 
-  for (i = 0; i < allTasks.length; i++) {
+  if (selectedValue == "important - not urgent") {
+    task.importance = "High Importance";
+    task.urgency = "High Urgency";
+  } else if (selectedValue == "not important - urgent") {
+    //TODO
+  } else if (selectedValue == "not important - not urgent") {
+    //TODO
+  } else {
+    //TODO
+  }
+
+  // 2)  save JSON to Server
+  saveJSONToServer(allTasks)
+  .then(function (result) {
+    // TODO: Show loading screen
+    console.log("Laden erfolgreich!", result);
+    load();
+  })
+  .catch(function (error) {
+    // Fehler
+    // TODO: Show error screen
+    console.error("Fehler beim laden!", error);
+  });
+
+  // 3) Update HTML View
+  insertTasktoMatrix();
+
+  // @Sebastian delete
+  /*for (i = 0; i < allTasks.length; i++) {
     if (
       allTasks[i].importance == "High Importance" &&
       allTasks[i].urgency == "High Urgency"
     ) {
       if (selectedValue == "important - not urgent") {
-         createFieldinList1_2(i);
-        closepopupMatrix();
+        createFieldinList1_2(i);
       } else if (selectedValue == "not important - urgent") {
-         createFieldinList1_3(i);
-        closepopupMatrix();
+        createFieldinList1_3(i);
       } else if (selectedValue == "not important - not urgent") {
-         createFieldinList1_4(i);
-        closepopupMatrix();
+        createFieldinList1_4(i);
       }
-    }
-  }
+
+      closepopupMatrix();
+    }*/
+
 }
 
 /**
