@@ -56,7 +56,7 @@ function addTask() {
     document.getElementById("mainWindow").insertAdjacentHTML('beforeEnd', html);
     setTimeout(function () {
         document.getElementById('popup').remove();
-    }, 10000);
+    }, 5000);
 }
 
 /**

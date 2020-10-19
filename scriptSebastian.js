@@ -6,8 +6,8 @@ const BASE_SERVER_URL =
 
 /**
  * This function open the Popupmenu from the matrix
+ * @param {integer} i - id of the task that should be updated
  */
-
 function openpopupMatrix(i) {
   document.getElementById("option-1").removeAttribute("selected", "selected");
 
@@ -20,6 +20,7 @@ function openpopupMatrix(i) {
   let task = allTasks[i];
 
   document.getElementById("popup-matrix").classList.remove("d-none");
+  document.getElementById("updateTaskButton").setAttribute('onclick', 'selector(' + i + ')');
 
   document.getElementById("popup-title").innerHTML = task.title;
 
@@ -54,31 +55,55 @@ function closepopupMatrix() {
   document.getElementById("popup-matrix").classList.add("d-none");
 }
 
-/**
- * This function choose where the task will be moved 
- */
 
-function selector() {
+/**
+ *  This function choose where the task will be moved 
+ * @param {integer} i - ID of the task that should be updated 
+ */
+function selector(i) {
+  let task = allTasks[i];
+
   let select_Menu = document.getElementById("select-menu");
   let selectedValue = select_Menu.options[select_Menu.selectedIndex].value;
 
-  for (i = 0; i < allTasks.length; i++) {
-    if (
-      allTasks[i].importance == "High Importance" &&
-      allTasks[i].urgency == "High Urgency"
-    ) {
-      if (selectedValue == "important - not urgent") {
-         createFieldinList1_2(i);
-        closepopupMatrix();
-      } else if (selectedValue == "not important - urgent") {
-         createFieldinList1_3(i);
-        closepopupMatrix();
-      } else if (selectedValue == "not important - not urgent") {
-         createFieldinList1_4(i);
-        closepopupMatrix();
-      }
-    }
+  if (selectedValue == "important - not urgent") {
+    task.importance = "High Importance";
+    task.urgency = "Low Urgency";
+  } else if (selectedValue == "not important - urgent") {
+  
+    task.importance = "Low Importance";
+    task.urgency = "High Urgency";
+
+  } else if (selectedValue == "not important - not urgent") {
+
+     task.importance = "Low Importance";
+     task.urgency = "Low Urgency";
+
+  } else if(selectedValue == "important - urgent") {
+    
+    task.importance = "High Importance";
+    task.urgency = "High Urgency";
   }
+
+  // 2)  save JSON to Server
+  saveJSONToServer(allTasks)
+  .then(function (result) {
+    // TODO: Show loading screen
+   
+    console.log("Laden erfolgreich!", result);
+    load(); 
+    
+  })
+  .catch(function (error) {
+    // Fehler
+    // TODO: Show error screen
+    console.error("Fehler beim laden!", error);
+  });
+
+  // 3) Update HTML View
+  insertTasktoMatrix();
+
+  closepopupMatrix();
 }
 
 /**
@@ -153,49 +178,6 @@ function createFieldinList1(id) {
   );
   list1.insertAdjacentHTML("beforeend", html);
 }
-
-function createFieldinList1_2(id) {
-  m = 1;
-
-  html = generateListItem(
-    m,
-    allTasks[i].date,
-    allTasks[i].title,
-    allTasks[i].description,
-    id
-  );
-  list2.insertAdjacentHTML("beforeend", html);
-}
-
-function createFieldinList1_3(id) {
-  m = 1;
-
-  html = generateListItem(
-    m,
-    allTasks[i].date,
-    allTasks[i].title,
-    allTasks[i].description,
-    id
-  );
-  list3.insertAdjacentHTML("beforeend", html);
-}
-
-function createFieldinList1_4(id) {
-  m = 1;
-
-  html = generateListItem(
-    m,
-    allTasks[i].date,
-    allTasks[i].title,
-    allTasks[i].description,
-    id
-  );
-  list4.insertAdjacentHTML("beforeend", html);
-}
-
-
-
-
 
 
 function createFieldinList2(id) {
@@ -286,7 +268,16 @@ function deleteTask(n) {
  */
 function loadTasks() {
   load();
-  showMyJSON();
+  document.getElementById("spinner").classList.remove("d-none");
+   showMyJSON();
+
+   if (document.readyState === "complete") {
+
+    document.getElementById("spinner").classList.add("d-none");
+
+   }
+
+  
 }
 
 /**
@@ -311,6 +302,7 @@ function load() {
  * payload {JSON | Array} - The payload you want to store
  */
 function loadJSONFromServer() {
+  
   return new Promise(function (resolve, reject) {
     let xhttp = new XMLHttpRequest();
     let proxy = determineProxySettings();
@@ -330,6 +322,7 @@ function loadJSONFromServer() {
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send();
   });
+  
 }
 
 function determineProxySettings() {
