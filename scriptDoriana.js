@@ -57,6 +57,7 @@ function insertItemsOnTheList() {
 }
 
 function questionUserAgain(id) {
+    document.getElementById('questionAgain').classList.remove('d-none');
     let questionAgain = `
     <div id="questionAgainId" class="questionAgainClass">
     <div class="questionAgain" 
@@ -93,11 +94,13 @@ function answerDeleteItemList(id) {
         });
     let itemWindow = document.getElementById("questionAgainId");
     itemWindow.parentNode.removeChild(itemWindow);
+    document.getElementById('questionAgain').classList.add('d-none');
 }
 
 function answerDoNotDelete() {
     let itemWindow = document.getElementById("questionAgainId");
     itemWindow.parentNode.removeChild(itemWindow);
+    document.getElementById('questionAgain').classList.add('d-none');
 }
 
 /**

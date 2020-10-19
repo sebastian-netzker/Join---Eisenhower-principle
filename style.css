@@ -611,10 +611,14 @@ hr {
 }
 
 .questionAgainListHtml {
-    position: absolute;
-    top: 40%;
-    left: 35%;
-    right: 30%;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25%;
+
 }
 
 .questionAgain {
