@@ -70,35 +70,35 @@ function selector(i) {
     task.importance = "High Importance";
     task.urgency = "Low Urgency";
   } else if (selectedValue == "not important - urgent") {
-  
+
     task.importance = "Low Importance";
     task.urgency = "High Urgency";
 
   } else if (selectedValue == "not important - not urgent") {
 
-     task.importance = "Low Importance";
-     task.urgency = "Low Urgency";
+    task.importance = "Low Importance";
+    task.urgency = "Low Urgency";
 
-  } else if(selectedValue == "important - urgent") {
-    
+  } else if (selectedValue == "important - urgent") {
+
     task.importance = "High Importance";
     task.urgency = "High Urgency";
   }
 
   // 2)  save JSON to Server
   saveJSONToServer(allTasks)
-  .then(function (result) {
-    // TODO: Show loading screen
-   
-    console.log("Laden erfolgreich!", result);
-    load(); 
-    
-  })
-  .catch(function (error) {
-    // Fehler
-    // TODO: Show error screen
-    console.error("Fehler beim laden!", error);
-  });
+    .then(function (result) {
+      // TODO: Show loading screen
+
+      console.log("Laden erfolgreich!", result);
+      load();
+
+    })
+    .catch(function (error) {
+      // Fehler
+      // TODO: Show error screen
+      console.error("Fehler beim laden!", error);
+    });
 
   // 3) Update HTML View
   insertTasktoMatrix();
@@ -269,32 +269,33 @@ function deleteTask(n) {
  */
 function loadTasks() {
   load();
-  document.getElementById("spinner").classList.remove("d-none");
-   showMyJSON();
+  showMyJSON();
 
-   if (document.readyState === "complete") {
 
-    document.getElementById("spinner").classList.add("d-none");
 
-   }
 
-  
 }
 
 /**
  * Loads myJSON from Server
  */
 function load() {
+  let loadingScreen = document.getElementById('spinner').classList;
+  loadingScreen.remove('d-none');
+
+
   loadJSONFromServer()
     .then(function (result) {
       //then(function (variable vom server))
       console.log("Laden erfolgreich!", result);
       allTasks = JSON.parse(result);
       insertTasktoMatrix();
+      loadingScreen.add('d-none');
     })
     .catch(function (error) {
       // Fehler
       console.error("Fehler beim laden!", error);
+      loadingScreen.add('d-none');
     });
 }
 
@@ -303,7 +304,7 @@ function load() {
  * payload {JSON | Array} - The payload you want to store
  */
 function loadJSONFromServer() {
-  
+
   return new Promise(function (resolve, reject) {
     let xhttp = new XMLHttpRequest();
     let proxy = determineProxySettings();
@@ -323,7 +324,7 @@ function loadJSONFromServer() {
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send();
   });
-  
+
 }
 
 function determineProxySettings() {
