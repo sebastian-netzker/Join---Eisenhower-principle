@@ -230,7 +230,8 @@ function createFieldinList4(id) {
  */
 function generateListItem(m, date, title, description, id) {
   let k = 1;
-  let html = `<li onclick="openpopupMatrix(${i})" id="li-${k}" class="li-${m}">
+  let html = `<li id="li-${k}" class="li-${m}">
+      <img onclick="openpopupMatrix(${i})" class="edit_icon" src="img/edit.png">
       <img onclick="deleteTask(${id})" class="garbage_can" src="img/garbage_can.png">
       <span class="date">${date}</span> <br> 
       <span id="title-${id}" class="title">${title}</span> <br> 

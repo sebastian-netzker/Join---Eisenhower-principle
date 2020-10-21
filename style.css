@@ -326,9 +326,9 @@ ul {
     border-radius: 8px 8px 8px 8px;
 }
 
-.li-1:hover, .li-2:hover, .li-3:hover, .li-4:hover {
+/*.li-1:hover, .li-2:hover, .li-3:hover, .li-4:hover {
     cursor: pointer;
-}
+}*/
 
 .li-1 {
     border-left: rgb(255, 72, 0) 8px solid;
@@ -351,6 +351,16 @@ ul {
     height: 25px;
     top: 5px;
     right: 10px;
+    object-fit: cover;
+    position: absolute;
+    cursor: pointer;
+}
+
+.edit_icon {
+    width: 25px;
+    height: 25px;
+    top: 5px;
+    right: 40px;
     object-fit: cover;
     position: absolute;
     cursor: pointer;
@@ -534,7 +544,7 @@ p {
     height: 100%;
     overflow: auto;
     background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .popup-content {
