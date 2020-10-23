@@ -38,25 +38,33 @@ function gererateTaskObject() {
 function addTask() {
     let t = gererateTaskObject();
     allTasks.push(t);
-   
+    document.getElementById('loading').classList.remove('d-none');
     tasksString = JSON.stringify(allTasks);
     saveJSONToServer(allTasks)
         .then(function (result) { //then(function (variable vom server))
             console.log('Laden erfolgreich!', result);
+            document.getElementById('loading').classList.add('d-none');
             load(); 
         })
         .catch(function (error) { // Fehler
             console.error('Fehler beim laden!', error);
+            document.getElementById('loading').classList.add('d-none');
+            document.getElementById('error').classList.remove('d-none');
         });
     
     //localStorage.setItem('data', tasksString); disabled - the JSON is saved on the Server
 
     emptyFields();
-    let html = "<div id='popup' class='transparentgray'><div class='popup'><h5>A new Task with the Title " + t.title + " has been added!</h5>You have set " + t.importance + " and " + t.urgency + "!</div></div>";
-    document.getElementById("mainWindow").insertAdjacentHTML('beforeEnd', html);
-    setTimeout(function () {
-        document.getElementById('popup').remove();
-    }, 5000);
+    
+    /**
+     * The following 5 lines would be a popup which shows the name and the category of the added Tast.
+     * It has been replaced by the loading screen
+     */
+    //let html = "<div id='popup' class='transparentgray'><div class='popup'><h5>A new Task with the Title " + t.title + " has been added!</h5>You have set " + t.importance + " and " + t.urgency + "!</div></div>";
+    //document.getElementById("mainWindow").insertAdjacentHTML('beforeEnd', html);
+    //setTimeout(function () {
+    //    document.getElementById('popup').remove();
+    //}, 5000);
 }
 
 /**
@@ -130,10 +138,12 @@ function getToday() {
  * Loads myJSON from Server
  */
 function load() {
+    document.getElementById('loading').classList.remove('d-none');
     loadJSONFromServer()
         .then(function (result) { //then(function (variable vom server))
             console.log('Laden erfolgreich!', result);
-            allTasks = JSON.parse(result); 
+            allTasks = JSON.parse(result);
+            document.getElementById('loading').classList.add('d-none');
         })
         .catch(function (error) { // Fehler
             console.error('Fehler beim laden!', error);

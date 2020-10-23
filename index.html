@@ -126,6 +126,23 @@
         </form>
     </div>
     </div>
+    <div id="loading" class="error d-none">
+        <div class="errorPopup">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            <h3>Just a second!</h3>
+            <p>We are updating your data!</p>
+        </div>
+    </div>
+    <div id="error" class="error d-none">
+        <div class="errorPopup">
+            <h3>Sorry!</h3>
+            <p>There has been a problem conecting to our server.</p>
+            <p style="padding-bottom: 24px;">Please try again.</p>
+            <button type="button" class="btn btn-success" onclick="location.reload()">reload</button>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -57,9 +57,9 @@ function insertItemsOnTheList() {
 }
 
 function questionUserAgain(id) {
-    document.getElementById('questionAgain').classList.remove('d-none');
+    document.getElementById('secondChance').classList.remove('d-none');
     let questionAgain = `
-    <div id="questionAgainId" class="questionAgainClass">
+   <!-- <div id="questionAgainId" class="questionAgainClass">
     <div class="questionAgain" 
      <span>Are you sure you want to delete the Task: ${allTasks[id].title}?</span>
     </div>
@@ -67,9 +67,19 @@ function questionUserAgain(id) {
     <span onclick="answerDeleteItemList(${id})"class="answerYes">Yes</span>
     <span onclick="answerDoNotDelete()"class="answerNo">No</span>
     </div>
-    </div>
+    </div>-->
+
+   
+        <div id="questionAgainId" class="errorPopup">
+            <h3>Are you sure you want to delete the Task: ${allTasks[id].title}?</h3>
+            <div>
+            <button type="button" class="btn btn-success" onclick="answerDeleteItemList(${id})">yes</button>
+            <button type="button" class="btn btn-success" onclick="answerDoNotDelete()">no</button>
+            </div>
+        </div>
+    
     `;
-    let question = document.getElementById("questionAgain").insertAdjacentHTML("beforeend", questionAgain);
+    let question = document.getElementById("secondChance").insertAdjacentHTML("beforeend", questionAgain);
 
 
 
@@ -83,10 +93,12 @@ function answerDeleteItemList(id) {
     let item = document.getElementById('item' + id);
     item.parentNode.removeChild(item);
     allTasks.splice(id, 1);
+    document.getElementById('loading').classList.remove('d-none');
     //localStorage.setItem('data', JSON.stringify(allTasks));
     saveJSONToServer(allTasks)
         .then(function (result) { //then(function (variable vom server))
             console.log('Laden erfolgreich!', result);
+            document.getElementById('loading').classList.add('d-none');
             //load(); 
         })
         .catch(function (error) { // Fehler
@@ -94,13 +106,13 @@ function answerDeleteItemList(id) {
         });
     let itemWindow = document.getElementById("questionAgainId");
     itemWindow.parentNode.removeChild(itemWindow);
-    document.getElementById('questionAgain').classList.add('d-none');
+    document.getElementById('secondChance').classList.add('d-none');
 }
 
 function answerDoNotDelete() {
     let itemWindow = document.getElementById("questionAgainId");
     itemWindow.parentNode.removeChild(itemWindow);
-    document.getElementById('questionAgain').classList.add('d-none');
+    document.getElementById('secondChance').classList.add('d-none');
 }
 
 /**
@@ -115,10 +127,12 @@ function loadTasks() {
  * Loads myJSON from Server
  */
 function load() {
+    document.getElementById('loading').classList.remove('d-none');
     loadJSONFromServer()
         .then(function (result) { //then(function (variable vom server))
             console.log('Laden erfolgreich!', result);
             allTasks = JSON.parse(result);
+            document.getElementById('loading').classList.add('d-none');
             insertItemsOnTheList();
         })
         .catch(function (error) { // Fehler

@@ -250,15 +250,19 @@ function deleteTask(n) {
   allTasks.splice(n, 1);
   let allTasksAsString = JSON.stringify(allTasks);
   //localStorage.setItem('data', allTasksAsString);
+  document.getElementById('loading').classList.remove('d-none');
   saveJSONToServer(allTasks)
     .then(function (result) {
       //then(function (variable vom server))
       console.log("Laden erfolgreich!", result);
+      document.getElementById('loading').classList.add('d-none');
       load();
     })
     .catch(function (error) {
       // Fehler
       console.error("Fehler beim laden!", error);
+      document.getElementById('error').classList.remove('d-none');
+      document.getElementById('loading').classList.add('d-none');
     });
 
   insertTasktoMatrix();
@@ -280,22 +284,25 @@ function loadTasks() {
  * Loads myJSON from Server
  */
 function load() {
-  let loadingScreen = document.getElementById('spinner').classList;
-  loadingScreen.remove('d-none');
+  //let loadingScreen = document.getElementById('spinner').classList;
+  //loadingScreen.remove('d-none');
 
-
+  document.getElementById('loading').classList.remove('d-none');
   loadJSONFromServer()
     .then(function (result) {
       //then(function (variable vom server))
       console.log("Laden erfolgreich!", result);
+      document.getElementById('loading').classList.add('d-none');
       allTasks = JSON.parse(result);
       insertTasktoMatrix();
-      loadingScreen.add('d-none');
+      //loadingScreen.add('d-none');
     })
     .catch(function (error) {
       // Fehler
       console.error("Fehler beim laden!", error);
-      loadingScreen.add('d-none');
+      //loadingScreen.add('d-none');
+      document.getElementById('error').classList.remove('d-none');
+      document.getElementById('loading').classList.add('d-none');
     });
 }
 
