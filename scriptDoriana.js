@@ -74,7 +74,7 @@ function questionUserAgain(id) {
             <h3>Are you sure you want to delete the Task: ${allTasks[id].title}?</h3>
             <div>
             <button type="button" class="btn btn-success" onclick="answerDeleteItemList(${id})">yes</button>
-            <button type="button" class="btn btn-success" onclick="answerDoNotDelete()">no</button>
+            <button type="button" class="btn btn-danger" onclick="answerDoNotDelete()">no</button>
             </div>
         </div>
     
