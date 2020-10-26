@@ -2,7 +2,7 @@ let n;
 let html;
 let allTasks = [];
 const BASE_SERVER_URL =
-  "http://simon-besendorfer.developerakademie.com/php/";
+  "http://sebastian-netzker.developerakademie.com/Gruppenarbeit/php/";
 
 /**
  * This function open the Popupmenu from the matrix
@@ -112,6 +112,7 @@ function selector(i) {
 
 function showMenu() {
   document.getElementById("overlay-menu").classList.add("show-overlay-menu");
+  document.getElementById("burger-menu").classList.add("d-none");
 }
 
 /**
@@ -120,6 +121,7 @@ function showMenu() {
 
 function closeMenu() {
   document.getElementById("overlay-menu").classList.remove("show-overlay-menu");
+  document.getElementById("burger-menu").classList.remove("d-none");
 }
 
 /**

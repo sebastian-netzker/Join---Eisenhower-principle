@@ -3,7 +3,8 @@ let priorityStatus = "high";
 let status = 0;
 
 let allTasks = [];
-const BASE_SERVER_URL = "http://simon-besendorfer.developerakademie.com/php/";
+const BASE_SERVER_URL =
+  "http://sebastian-netzker.developerakademie.com/Gruppenarbeit/php/";
 
 /**
  * Creates item to the List, by every call of the function addTask()
@@ -188,6 +189,7 @@ function showMyJSON() {
 function showMenu() {
 
     document.getElementById("overlay-menu").classList.add("show-overlay-menu");
+    document.getElementById("burger-menu").classList.add("d-none");
 }
 
 /**
@@ -197,6 +199,7 @@ function showMenu() {
 function closeMenu() {
 
     document.getElementById("overlay-menu").classList.remove("show-overlay-menu");
+    document.getElementById("burger-menu").classList.remove("d-none");
 }
 
 /**

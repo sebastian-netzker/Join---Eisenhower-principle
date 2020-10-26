@@ -6,6 +6,7 @@
 function showMenu(){
 
     document.getElementById("overlay-menu").classList.add("show-overlay-menu");
+    document.getElementById("burger-menu").classList.add("d-none");
   }
 
 /**
@@ -15,6 +16,7 @@ function showMenu(){
 function closeMenu() {
 
     document.getElementById("overlay-menu").classList.remove("show-overlay-menu");
+    document.getElementById("burger-menu").classList.remove("d-none");
   }
 
 /**

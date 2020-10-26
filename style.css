@@ -149,10 +149,11 @@ h1 {
 }
 
 .h2-notimportant {
-    top: 320px;
+    top: 342px;
     transform: rotate(-90deg);
-    left: -12px;
+    left: -20px;
     font-weight: 200;
+    width: 128px;
 }
 
 h2 {
@@ -573,13 +574,15 @@ p {
 }
 
 .popup-close {
-    position: relative;
-    top: -20px;
-    right: -5px;
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    
+        position: relative;
+        top: -28px;
+        right: -11px;
+        color: #aaa;
+        float: right;
+        font-size: 35px;
+        font-weight: bold;
+    
 }
 
 .popup-close:hover, .popup-close:focus {
@@ -1074,6 +1077,144 @@ hr {
     }
 }
 
+@media(device-width:768px) {
+    .mainWindow-matrix {
+        height: 95vh;
+    }
+    .important-urgent {
+        left: 100px;
+        top: 220px;
+    }
+    .important-noturgent {
+        right: 50px;
+        top: 220px;
+    }
+    .notimportant-noturgent {
+        right: 50px;
+        top: 630px;
+    }
+    .notimportant-urgent {
+        top: 630px;
+        left: 100px;
+    }
+    .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+        height: 300px;
+        width: 275px;
+    }
+    .h2-notimportant {
+        top: 700px;
+        width: 247px;
+        font-size: 40px;
+        left: -75px;
+    }
+    .h2-important {
+        left: -40px;
+        top: 300px;
+        font-size: 40px;
+    }
+    .joinlogo {
+        width: 65px;
+        top: 20px;
+    }
+    .overlay-menu a {
+        font-size: 40px;
+        padding-bottom: 100px;
+    }
+    .taskColumn {
+        padding-top: 65px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    .form-group {
+        margin-bottom: 25px;
+    }
+    .form-date {
+        padding-bottom: 10px;
+    }
+    .btn1, .btn2 {
+        width: 150px;
+        height: 50px;
+        font-size: 25px;
+    }
+    .h2-urgent, .h2-noturgent {
+        display: inherit;
+        font-size: 40px;
+    }
+    .h2-urgent {
+        right: 480px;
+    }
+    .h2-noturgent {
+        right: 90px;
+    }
+    .h2-urgent, .h2-noturgent {
+        padding-top: 90px;
+    }
+    .impressum {
+        padding-top: 70px;
+    }
+    .help-cont {
+        padding-top: 50px;
+    }
+    .cont_1 {
+        padding-top: 20px;
+    }
+    .date-cont {
+        left: 130px;
+    }
+    .name-cont {
+        left: 270px;
+    }
+    .sort-cont {
+        left: 430px;
+    }
+    .details {
+        right: 150px;
+    }
+    .date-cont, .name-cont, .sort-cont, .details {
+        font-size: 25px;
+        position: absolute;
+        font-weight: bold;
+    }
+    .item {
+        margin-top: 30px;
+    }
+    .dateClass, .title, .status, .description {
+        font-size: 15px;
+        padding-top: 15px;
+        padding-left: 15px;
+    }
+    .delete {
+        font-size: 20px;
+        border-radius: 1vh;
+    }
+    .p-status {
+        padding-left: 25px;
+    }
+    .form-control {
+        font-size: 1.1rem;
+    }
+    .taskColumn-2 {
+        padding-top: 0px;
+    }
+    .form-description {
+        padding-top: 15px;
+    }
+    .date {
+        font-size: 12px;
+    }
+    .edit_icon, .garbage_can {
+        top: 0px;
+    }
+    .popup-content {
+        margin: 40% auto;
+        width: 75%;
+    }
+    .p-popup {
+        font-size: 24px;
+    }
+}
+
 @media(max-width:450px) {
     .h2-important {
         left: -25px;
@@ -1148,10 +1289,10 @@ hr {
         justify-content: center;
         display: flex;
     }
-    .popup-content{
+    .popup-content {
         width: 95%;
     }
-    .h4-popup{
+    .h4-popup {
         justify-content: center;
         align-items: center;
     }
