@@ -19,9 +19,9 @@ function createItemsToTheList(title, priorityStatus, discription, i, date) {
     let item = `
         <li class="item" id="item${i}">
         <p class="dateClass">${date}</p>
-        <p class="title"> ${title}</p>
-        <p class="status"> ${priorityStatus}</p>
-        <p class="description"> ${discription}</p>
+        <p class="title title-list"> ${title}</p>
+        <p class="status status-list"> ${priorityStatus}</p>
+        <p class="description description-list"> ${discription}</p>
         <button onclick="questionUserAgain(${i})"class="delete">Delete Task</button>
         </li>
          `;
