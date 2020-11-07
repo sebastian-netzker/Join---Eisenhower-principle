@@ -822,7 +822,7 @@ hr {
     }
     .overlay-menu a {
         font-size: 25px;
-        padding-bottom: 20px;
+        padding-bottom: 50px;
     }
     h3 {
         font-size: 15px;
@@ -1038,17 +1038,45 @@ hr {
         width: 130px;
     }
     .buttonPosition {
-        top: 10px
+        margin-top: 20px;
+        bottom: 10px;
     }
     .questionAgainListHtml {
         font-size: 15px;
     }
     .date-cont {
-        font-size: 17px;
+        font-size: 20px;
     }
     .status {
         width: 80%;
         margin-left: 14px;
+    }
+    .overlay-menu a {
+        padding-bottom: 25px;
+        top: 10px;
+    }
+    .h2-important {
+        top: 90px;
+    }
+    .h2-notimportant {
+        top: 300px;
+    }
+    .important-urgent {
+        left: 80px;
+        top: 100px;
+    }
+    .important-noturgent {
+        top: 100px;
+        right: 30px;
+    }
+    .notimportant-urgent {
+        left: 80px;
+    }
+    .notimportant-noturgent {
+        right: 30px;
+    }
+    .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+        width: 250px;
     }
 }
 
@@ -1077,8 +1105,6 @@ hr {
         margin-left: -2%;
     }
 }
-
-
 
 @media(device-width:812px) {
     .h2-notimportant {
@@ -1271,6 +1297,109 @@ hr {
     }
 }
 
+@media(device-width:653px) {
+    .overlay-menu a {
+        padding-bottom: 8px;
+    }
+
+    .h2-important{
+        top: 70px;
+    }
+
+    .h2-notimportant{
+        top: 220px;
+    }
+
+    .important-urgent, .important-noturgent{
+        top: 80px;
+    }
+
+    .notimportant-urgent, .notimportant-noturgent{
+        top: 230px;
+    }
+}
+
+@media(device-width:667px) {
+    .overlay-menu a {
+        padding-bottom: 25px;
+    }
+}
+
+@media(device-width:736px) {
+    .overlay-menu a {
+        padding-bottom: 35px;
+    }
+}
+
+@media(device-width:720px) {
+    .overlay-menu a {
+        padding-bottom: 50px;
+        top: 30px;
+    }
+}
+
+@media(device-width:568px) {
+    .overlay-menu a {
+        padding-bottom: 15px;
+    }
+    .h2-important {
+        top: 70px;
+    }
+    .h2-notimportant {
+        top: 270px;
+    }
+    .important-urgent, .important-noturgent {
+        top: 80px;
+    }
+    .notimportant-urgent, .notimportant-noturgent {
+        top: 280px;
+    }
+    .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+        width: 220px;
+    }
+}
+
+@media(device-width:540px) {
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .important-noturgent {
+        right: 20px;
+        top: 155px;
+    }
+    .important-urgent {
+        left: 60px;
+        top: 155px;
+    }
+    .notimportant-urgent {
+        left: 60px;
+        top: 445px;
+    }
+    .notimportant-noturgent {
+        right: 20px;
+        top: 445px;
+    }
+    .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+        height: 170px;
+        width: 220px;
+    }
+    .h2-important {
+        left: -32px;
+        top: 170px;
+        font-size: 30px;
+    }
+    .h2-notimportant {
+        top: 450px;
+        width: 183px;
+        font-size: 30px;
+        left: -55px;
+    }
+    .overlay-menu a {
+        font-size: 30px;
+        padding-bottom: 60px;
+    }
+}
+
 @media(max-width:450px) {
     .h2-important {
         left: -25px;
@@ -1298,7 +1427,7 @@ hr {
     .overlay-menu a {
         top: 30px;
         font-size: 30px;
-        padding-bottom: 95px
+        padding-bottom: 60px
     }
     .dateClass {
         width: 100%;
@@ -1355,6 +1484,49 @@ hr {
     }
 }
 
+@media (min-device-width: 280px) and (max-device-width: 420px) {
+    li {
+        flex-direction: column;
+    }
+    p {
+        text-align: center;
+        padding-top: 10px;
+    }
+    .delete {
+        position: relative;
+        left: 230px;
+    }
+    .description-list {
+        padding-left: 0px;
+    }
+    .title-list {
+        font-size: 25px;
+    }
+    .status-list, .description-list, .dateClass {
+        font-size: 18px;
+    }
+    .sortText {
+        display: none;
+    }
+    .delete {
+        position: relative;
+        bottom: -5px;
+        left: 10px;
+    }
+}
+
+@media(device-width:414px) {
+    .overlay-menu a {
+        padding-bottom: 75px;
+    }
+}
+
+@media(device-width:411px) {
+    .overlay-menu a {
+        padding-bottom: 80px;
+    }
+}
+
 @media(max-width:400px) {
     .imageProperties {
         width: 230px;
@@ -1389,31 +1561,63 @@ hr {
 }
 
 @media(device-width:375px) {
-    li {
-        flex-direction: column;
+    .overlay-menu a {
+        padding-bottom: 70px;
     }
+}
 
-    p{
-        text-align: center;
-        padding-top: 10px;
+@media(device-width:360px) {
+    .notimportant-urgent {
+        top: 430px;
     }
-    .delete {
-        position: relative;
-        left: 230px;
+    .notimportant-noturgent {
+        top: 570px;
     }
-    .description-list {
-        padding-left: 0px;
-    }
+}
 
-    .title-list{
-        font-size: 25px;
+@media(device-width:320px) {
+    .notimportant-urgent {
+        top: 370px;
     }
-
-    .status-list, .description-list, .dateClass{
-        font-size: 18px;
+    .notimportant-noturgent {
+        top: 500px;
     }
+    .important-urgent {
+        top: 100px;
+    }
+    .important-noturgent {
+        top: 230px;
+    }
+    .h2-notimportant {
+        top: 420px;
+    }
+    .important-urgent, .important-noturgent, .notimportant-urgent, .notimportant-noturgent {
+        height: 110px;
+    }
+    .h2-important {
+        left: -30px;
+    }
+    .h2-notimportant {
+        left: -55px;
+        top: 410px;
+    }
+    .overlay-menu a {
+        padding-bottom: 45px;
+        padding-left: 90px;
+    }
+}
 
-    .sortText{
-        display: none;
+@media(device-width:280px) {
+    .h2-important {
+        left: -35px;
+    }
+    .h2-notimportant {
+        left: -60px;
+    }
+    .overlay-menu a {
+        top: none;
+        font-size: 30px;
+        padding-bottom: 55px;
+        padding-left: 70px;
     }
 }
